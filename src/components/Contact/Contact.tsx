@@ -1,9 +1,11 @@
-import { forwardRef } from "react"
+import { forwardRef } from 'react';
 
-const Contact = forwardRef<HTMLSelectElement>((_,ref) => {
+const Contact = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
-    <section ref={ref}>Contact</section>
-  )
-})
+    <section ref={ref}>
+      <h2>Contact</h2>
+    </section>
+  );
+});
 
-export default Contact
+export default Contact;

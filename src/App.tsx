@@ -7,7 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import Paralax from './components/Paralax/Paralax';
 import Project1 from './components/Projects/Project1';
 import Project2 from './components/Projects/Project2';
-import './styles/GlobalStyle/app.scss';
+import './styles/Global/app.scss';
 
 function App() {
   const heroRef = useRef(null);
@@ -22,8 +22,7 @@ function App() {
         aboutRef={aboutRef}
         project1Ref={project1Ref}
         project2Ref={project2Ref}
-        contactRef={contactRef}
-      />
+        contactRef={contactRef}></Navbar>
       <Hero ref={heroRef} />
       <Paralax />
       <About ref={aboutRef} />

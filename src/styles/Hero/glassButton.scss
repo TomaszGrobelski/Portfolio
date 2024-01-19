@@ -1,0 +1,9 @@
+.glass-button {
+    padding: 10px 20px;
+    max-width: 10rem;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+  }

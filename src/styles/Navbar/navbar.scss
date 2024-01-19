@@ -1,52 +1,69 @@
-@import '../GlobalStyle/app.scss';
-
-.navbar {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  height: 100svh;
-  max-width: 300px;
-  color: black;
-  background-color: white;
-
-  .nav-list {
+@import '../Global/app.scss';
+.sidebar {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    height: 100svh;
+    max-width: 270px;
     color: black;
-    list-style: none;
-    display: grid;
-    gap: 2rem;
-    padding-block: 2rem;
-    font-size: 2rem;
-    li {
-      padding: 1rem 2rem;
-      margin-left: 1rem;
-      border-radius: 100vw 0 0 100vw;
+    background-color: white;
+
+    .close-button {
+      margin-left: 1.5rem;
+      margin-top: 1.5rem;
+      outline: none;
       cursor: pointer;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border: 2px $primaryBackGroundColor solid;
       color: black;
+    }
+    .nav-list {
+      color: black;
+      list-style: none;
+      display: grid;
+      gap: 2rem;
+      padding-block: 2rem;
+      font-size: 2rem;
+      li {
+        padding: 1rem 2rem;
+        margin-left: 1rem;
+        border-radius: 100vw 0 0 100vw;
+        cursor: pointer;
+        color: black;
 
-      &.active {
-        background: $primaryBackGroundColor;
-        position: relative;
-        color: white;
+        &.active {
+          background: $primaryBackGroundColor;
+          position: relative;
+          color: white;
 
-        &::before,
-        &::after {
-          --border-radius: 2rem;
-          content: '';
-          position: absolute;
-          width: var(--border-radius);
-          height: var(--border-radius);
-          background: white;
-          right: 0;
-        }
-        &::before {
-          top: calc(var(--border-radius) * -1);
-          border-radius: 0 0 100vw 0;
-          box-shadow: 6px 6px 0 6px $primaryBackGroundColor;
-        }
-        &::after {
-          bottom: calc(var(--border-radius) * -1);
-          border-radius: 0 100vw 0 0;
-          box-shadow: 6px -6px 0 6px $primaryBackGroundColor;
+          &::before,
+          &::after {
+            --border-radius: 2rem;
+            content: '';
+            position: absolute;
+            width: var(--border-radius);
+            height: var(--border-radius);
+            background: white;
+            right: 0;
+          }
+          &::before {
+            top: calc(var(--border-radius) * -1);
+            border-radius: 0 0 100vw 0;
+            box-shadow: 6px 6px 0 6px $primaryBackGroundColor;
+          }
+          &::after {
+            bottom: calc(var(--border-radius) * -1);
+            border-radius: 0 100vw 0 0;
+            box-shadow: 6px -6px 0 6px $primaryBackGroundColor;
+          }
         }
       }
     }
