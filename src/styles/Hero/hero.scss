@@ -21,6 +21,7 @@
 
       .header {
         font-size: 90px;
+        letter-spacing: 3px;
       }
       .description {
         max-width: 20rem;
@@ -55,9 +56,12 @@
     }
   }
   .welcom {
+    justify-self: end;
     grid-row: 2;
     font-size: 10rem;
     opacity: 0.4;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
     @include respond-to('large') {
       font-size: 8rem;
     }
@@ -66,6 +70,31 @@
     }
     @include respond-to('small') {
       font-size: 3.5rem;
+    }
+  }
+  .social-media {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+    top: 4rem;
+    right: 1rem;
+    background-color: $primaryBackGroundColor;
+    .social-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      a{
+        
+        &:hover{
+          scale: 1.2;
+        }
+      }
+    }
+    .web-dev {
+      opacity: 0.4;
+      transform: rotate(90deg);
     }
   }
 }
