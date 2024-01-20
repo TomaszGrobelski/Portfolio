@@ -10,50 +10,54 @@ const HeroHeader = ({ className }: { className: string }) => {
   const surnameIntervalRef = useRef<null | number>(null);
 
   useEffect(() => {
-    let nameIteration = 0;
-    let surnameIteration = 0;
+    const startAnimation = () => {
+      let nameIteration = 0;
+      let surnameIteration = 0;
 
-    nameIntervalRef.current = setInterval(() => {
-      setName((oldName) => {
-        const chars = oldName.split('');
-        for (let i = 0; i < chars.length; i++) {
-          if (i < Math.floor(nameIteration)) {
-            chars[i] = authorName[i];
-          } else {
-            chars[i] = letters[Math.floor(Math.random() * letters.length)];
+      nameIntervalRef.current = setInterval(() => {
+        setName((oldName) => {
+          const chars = oldName.split('');
+          for (let i = 0; i < chars.length; i++) {
+            if (i < Math.floor(nameIteration)) {
+              chars[i] = authorName[i];
+            } else {
+              chars[i] = letters[Math.floor(Math.random() * letters.length)];
+            }
           }
+          return chars.join('');
+        });
+
+        nameIteration += 1 / 15;
+
+        if (nameIteration >= authorName.length) {
+          clearInterval(nameIntervalRef.current!);
         }
-        return chars.join('');
-      });
+      }, 30);
 
-      nameIteration += 1 / 15;
-
-      if (nameIteration >= authorName.length) {
-        clearInterval(nameIntervalRef.current!);
-      }
-    }, 30);
-
-    surnameIntervalRef.current = setInterval(() => {
-      setSurname((oldSurname) => {
-        const chars = oldSurname.split('');
-        for (let i = 0; i < chars.length; i++) {
-          if (i < Math.floor(surnameIteration)) {
-            chars[i] = authorSurname[i];
-          } else {
-            chars[i] = letters[Math.floor(Math.random() * letters.length)];
+      surnameIntervalRef.current = setInterval(() => {
+        setSurname((oldSurname) => {
+          const chars = oldSurname.split('');
+          for (let i = 0; i < chars.length; i++) {
+            if (i < Math.floor(surnameIteration)) {
+              chars[i] = authorSurname[i];
+            } else {
+              chars[i] = letters[Math.floor(Math.random() * letters.length)];
+            }
           }
+          return chars.join('');
+        });
+
+        surnameIteration += 1 / 10;
+
+        if (surnameIteration >= authorSurname.length) {
+          clearInterval(surnameIntervalRef.current!);
         }
-        return chars.join('');
-      });
-
-      surnameIteration += 1 / 10;
-
-      if (surnameIteration >= authorSurname.length) {
-        clearInterval(surnameIntervalRef.current!);
-      }
-    }, 30);
+      }, 30);
+    };
+    const timeoutId = setTimeout(startAnimation, 1000);
 
     return () => {
+      clearTimeout(timeoutId);
       clearInterval(nameIntervalRef.current!);
       clearInterval(surnameIntervalRef.current!);
     };
@@ -61,7 +65,8 @@ const HeroHeader = ({ className }: { className: string }) => {
 
   return (
     <h1 className={className}>
-      {name} <br /> {surname}
+      <span>{name}</span>
+      <span>{surname}</span>
     </h1>
   );
 };

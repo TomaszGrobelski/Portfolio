@@ -1,67 +1,128 @@
 @import '../Global/app.scss';
+@import './spinShapeImage.scss';
 
 .hero {
+  position: relative;
   max-width: 100vw;
   display: grid;
   grid-template-rows: 80% 20%;
   place-items: center;
+  // outline: 1px solid red;
   .wrapper {
-    // padding: 50px;
     display: flex;
     justify-content: space-between;
     max-width: 100vw;
 
     .left-box {
       position: relative;
-      left: 7rem;
-      width: 50vw;
+      left: 2rem;
+      width: 55vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      gap: 1rem;
+      z-index: 2;
 
       .header {
-        font-size: 90px;
-        letter-spacing: 3px;
+        font-size: 80px;
+        letter-spacing: 2px;
+        display: flex;
+        flex-direction: column;
+        line-height: 5.5rem;
+        height: 180px;
+        text-shadow: 1px 1px 10px white;
+        @include respond-to('small') {
+          font-size: 25px;
+          line-height: 3.5rem;
+        }
+        @include respond-to('medium') {
+          font-size: 50px;
+          line-height: 4.5rem;
+        }
       }
       .description {
-        max-width: 20rem;
-        text-align: justify;
+        display: flex;
+        max-width: 25rem;
+        text-wrap: wrap;
+        text-align: start;
+        font-size: 18px;
+        line-height: 24px;
+        padding-right: 1rem;
+        @include respond-to('small') {
+          font-size: 16px;
+        }
+      }
+      .buttons-box {
+        margin-top: 2rem;
       }
     }
     .right-box {
+      display: flex;
+      justify-content: start;
       width: 50%;
       position: relative;
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(rgba(27, 27, 27, 0.5), rgba(27, 27, 27, 0.5)), url('ścieżka-do-zdjęcia.jpg');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.5;
-        z-index: -1;
-      }
-      & img {
-        object-fit: contain;
-        width: 100%;
+      z-index: 1;
+      .image-container {
         position: relative;
-        z-index: 1;
-        mix-blend-mode: difference;
-        opacity: 0.5;
-        max-height: 25rem;
+        right: 8rem;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        overflow: hidden;
+        & img {
+          object-fit: contain;
+          width: 350px;
+          height: 350px;
+          position: absolute;
+          bottom: 0.2rem;
+          mix-blend-mode: difference;
+          opacity: 0.5;
+          z-index: -10;
+          overflow: hidden;
+        }
+        .spin-border {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 350px;
+          width: 330px;
+          overflow: hidden;
+          border: 2px white solid;
+          box-shadow: 0 0 15px white;
+          animation: spinShape 25s infinite linear;
+          z-index: 15;
+        }
+      }
+      @include respond-to('large') {
+        display: none;
       }
     }
   }
+  .blured-circle {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background-color: rgb(151, 178, 238);
+    z-index: 10;
+    bottom: 7rem;
+    left: 10rem;
+    filter: blur(80px);
+  }
   .welcom {
+    color: white;
     justify-self: end;
     grid-row: 2;
     font-size: 10rem;
-    opacity: 0.4;
+    opacity: 0.6;
     padding-right: 2rem;
     padding-bottom: 2rem;
+    text-shadow: 1px 1px 10px white;
+
     @include respond-to('large') {
       font-size: 8rem;
     }
@@ -78,16 +139,20 @@
     flex-direction: column;
     align-items: center;
     gap: 8rem;
-    top: 4rem;
-    right: 1rem;
+    top: 6rem;
+    right: 0rem;
     background-color: $primaryBackGroundColor;
     .social-box {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      a{
-        
-        &:hover{
+      button {
+        &:hover {
+          scale: 1.2;
+        }
+      }
+      a {
+        &:hover {
           scale: 1.2;
         }
       }
@@ -95,6 +160,7 @@
     .web-dev {
       opacity: 0.4;
       transform: rotate(90deg);
+      text-shadow: 2px 2px 6px white;
     }
   }
 }
