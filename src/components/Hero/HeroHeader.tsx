@@ -1,19 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 
-const HeroHeader = () => {
-  const targetName = 'TOMASZ GROBELSKI';
-  const [name, setName] = useState(' '.repeat(targetName.length));
+const HeroHeader = ({ className }: { className: string }) => {
+  const authorName = 'TOMASZ';
+  const authorSurname = 'GROBELSKI';
+  const [name, setName] = useState(' '.repeat(authorName.length));
+  const [surname, setSurname] = useState(' '.repeat(authorSurname.length));
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const intervalRef = useRef<null | number>(null);
+  const nameIntervalRef = useRef<null | number>(null);
+  const surnameIntervalRef = useRef<null | number>(null);
 
   useEffect(() => {
-    let iteration = 0;
-    intervalRef.current = setInterval(() => {
+    let nameIteration = 0;
+    let surnameIteration = 0;
+
+    nameIntervalRef.current = setInterval(() => {
       setName((oldName) => {
         const chars = oldName.split('');
         for (let i = 0; i < chars.length; i++) {
-          if (i < Math.floor(iteration)) {
-            chars[i] = targetName[i];
+          if (i < Math.floor(nameIteration)) {
+            chars[i] = authorName[i];
           } else {
             chars[i] = letters[Math.floor(Math.random() * letters.length)];
           }
@@ -21,23 +26,44 @@ const HeroHeader = () => {
         return chars.join('');
       });
 
-      iteration += 1 / 5;
+      nameIteration += 1 / 15;
 
-      if (iteration >= targetName.length) {
-        if (intervalRef.current) {
-          clearInterval(intervalRef.current);
+      if (nameIteration >= authorName.length) {
+        clearInterval(nameIntervalRef.current!);
+      }
+    }, 30);
+
+    surnameIntervalRef.current = setInterval(() => {
+      setSurname((oldSurname) => {
+        const chars = oldSurname.split('');
+        for (let i = 0; i < chars.length; i++) {
+          if (i < Math.floor(surnameIteration)) {
+            chars[i] = authorSurname[i];
+          } else {
+            chars[i] = letters[Math.floor(Math.random() * letters.length)];
+          }
         }
+        return chars.join('');
+      });
+
+      surnameIteration += 1 / 10;
+
+      if (surnameIteration >= authorSurname.length) {
+        clearInterval(surnameIntervalRef.current!);
       }
     }, 30);
 
     return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
+      clearInterval(nameIntervalRef.current!);
+      clearInterval(surnameIntervalRef.current!);
     };
   }, []);
 
-  return <h1>{name}</h1>;
+  return (
+    <h1 className={className}>
+      {name} <br /> {surname}
+    </h1>
+  );
 };
 
 export default HeroHeader;

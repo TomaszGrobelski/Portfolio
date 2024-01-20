@@ -7,12 +7,15 @@ $primaryBackGroundColor: #1b1b1b;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lora', serif;
-  
 }
 
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+body {
+  background: $primaryBackGroundColor;
 }
 
 section {
@@ -21,7 +24,6 @@ section {
   background: $primaryBackGroundColor;
   color: white;
 }
-
 h1,
 h2,
 h3 {
@@ -37,4 +39,20 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'small' {
+    @media (max-width: 500px) {
+      @content;
+    }
+  } @else if $breakpoint == 'medium' {
+    @media (max-width: 700px) {
+      @content;
+    }
+  } @else if $breakpoint == 'large' {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
 }

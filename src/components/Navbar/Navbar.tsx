@@ -6,7 +6,6 @@ import { RefObject } from 'react';
 import '../../styles/Navbar/navbar.scss';
 import { NavbarProps } from '../../types/Navbar/navbar.types';
 
-// import MenuButton from './MenuButton';
 
 const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState<string>('home');
@@ -87,8 +86,6 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
           </ul>
         </motion.nav>
       </motion.div>
-
-      {/* <MenuButton onClick={() => setNavbarVisible(!navbarVisible)} /> */}
     </>
   );
 };

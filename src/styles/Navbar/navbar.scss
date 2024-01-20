@@ -1,5 +1,6 @@
 @import '../Global/app.scss';
 .sidebar {
+  position: relative;
   .navbar {
     position: fixed;
     top: 0;
@@ -9,7 +10,10 @@
     max-width: 270px;
     color: black;
     background-color: white;
-
+    z-index: 10;
+    @include respond-to('small') {
+      max-width: 200px;
+    }
     .close-button {
       margin-left: 1.5rem;
       margin-top: 1.5rem;
@@ -32,6 +36,10 @@
       gap: 2rem;
       padding-block: 2rem;
       font-size: 2rem;
+      @media (max-width: 500px) {
+      font-size: 1rem;
+      gap: 1.5rem;
+      }
       li {
         padding: 1rem 2rem;
         margin-left: 1rem;

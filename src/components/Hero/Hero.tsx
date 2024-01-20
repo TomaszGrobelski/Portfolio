@@ -10,8 +10,7 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
     <section ref={ref} className='hero'>
       <div className='wrapper'>
         <div className='left-box'>
-          {/* <h1 className='header'>TOMASZ <br /> GROBELSKI</h1> */}
-          <HeroHeader />
+          <HeroHeader className='header' />
           <p className='description'>
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
