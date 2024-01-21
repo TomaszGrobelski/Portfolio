@@ -1,12 +1,13 @@
 import { forwardRef } from 'react';
 
-import '../../styles/Project2/project2.scss';
+import '../../styles/Projects/Project2/project2.scss';
+import ProjectImageWithTech from './ProjectImageWithTech';
 
 const Project2 = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
     <section ref={ref} className='project2'>
       <h2>Nika</h2>
-      <div>dsad</div>
+      <ProjectImageWithTech image='' alt='Nika' year='2023' tech='React · TypeScrit · TailwindCSS ' />
     </section>
   );
 });
