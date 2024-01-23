@@ -1,0 +1,21 @@
+@import '../../styles/Global/app.scss';
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+
+    .buttons-box {
+      align-self: start;
+      display: flex;
+      gap: 3rem;
+    }
+  }
+}

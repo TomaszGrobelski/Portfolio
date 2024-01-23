@@ -2,8 +2,8 @@ import { Icon } from '@iconify/react';
 import { forwardRef } from 'react';
 import { useRef } from 'react';
 
-import AuthorImage from '../../assets/dsa.jpg';
 import welcomMusic from '../../assets/Welcom.mp3';
+import AuthorImage from '../../assets/dsa.jpg';
 import '../../styles/Hero/hero.scss';
 import GlassButton from './GlassButton';
 import HeroHeader from './HeroHeader';
@@ -22,16 +22,16 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
 
   return (
     <section ref={ref} className='hero'>
-      <div className='wrapper'>
+      <div className='hero__wrapper'>
         <div className='left-box'>
-          <HeroHeader className='header' />
-          <p className='description'>
+          <HeroHeader className='left-box__header' />
+          <p className='left-box__description'>
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
             experiences.{' '}
           </p>
-          <div className='buttons-box'>
-            <GlassButton text='HIRE ME' />
+          <div className='left-box__button'>
+            <GlassButton text='HIRE ME' icon={<Icon icon='clarity:contract-line' color='white' />} />
           </div>
         </div>
         <div className='right-box'>
@@ -49,7 +49,7 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             <Icon icon='charm:sound-up' color='white' width={30} />
             <audio ref={audioRef} src={welcomMusic}></audio>
           </button>
-          <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/'>
+          <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' target='_blank' rel='noopener noreferrer'>
             <Icon icon='devicon:linkedin' width={30} />
           </a>
           <a href='https://github.com/TomaszGrobelski'>

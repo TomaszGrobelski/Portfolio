@@ -1,12 +1,15 @@
-import { Icon } from '@iconify/react';
-
 import '../../styles/Hero/glassButton.scss';
 
-const GlassButton = ({ text }: { text: string }) => {
+interface GlassButtonProps {
+  text: string;
+  icon: React.ReactElement;
+  disabled?: boolean;
+}
+const GlassButton = ({ text, icon, disabled }: GlassButtonProps) => {
   return (
-    <button className='glass-button'>
+    <button disabled={disabled} className={disabled ? 'off-glass-button' : 'glass-button'}>
       {text}
-      <Icon icon='clarity:contract-line' color='white' />
+      {icon}
     </button>
   );
 };

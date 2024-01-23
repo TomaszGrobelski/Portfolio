@@ -1,6 +1,24 @@
-.contact{
+@import '../../styles//Global//app.scss';
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: #1b1b1b;
+
+  &__header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    
+    gap: 1rem;
+  }
+  &__container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 70% 30%;
+
+    @include respond-to('medium') {
+      grid-template-columns: 100%;
+    }
+  }
 }

@@ -4,11 +4,21 @@
   align-items: start;
   gap: 1rem;
   width: 90vw;
-  &__image {
-    background-color: white;
-    width: 100%;
-    height: 600px;
+  &__container {
+    overflow: hidden;
+    max-height: 70svh;
+    width: 90vw;
     border-radius: 2rem;
+    &-image {
+      width: 100%;
+
+      object-fit: cover;
+      object-position: top;
+
+      &:hover {
+        animation: scrollDown 5s linear infinite;
+      }
+    }
   }
   &__info {
     display: flex;
@@ -32,5 +42,14 @@
     padding: 0.5rem 1rem;
     border-radius: 1.2rem;
     box-shadow: 0 0 3px white;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-1500px);
   }
 }

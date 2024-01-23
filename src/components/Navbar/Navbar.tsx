@@ -6,7 +6,6 @@ import { RefObject } from 'react';
 import '../../styles/Navbar/navbar.scss';
 import { NavbarProps } from '../../types/Navbar/navbar.types';
 
-
 const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState<string>('home');
   const [navbarVisible, setNavbarVisible] = useState<boolean>(false);
@@ -18,7 +17,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
   };
   const variants = {
     open: {
-      clipPath: 'circle(1200px at 44px 44px)',
+      clipPath: 'circle(1300px at 44px 44px)',
       transition: {
         type: 'spring',
         stiffness: 20,
@@ -38,8 +37,12 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
   return (
     <>
       <motion.div className='sidebar' animate={navbarVisible ? 'open' : 'closed'}>
-        <motion.nav className='navbar' variants={variants} >
-          <button className='close-button' onClick={() => setNavbarVisible(!navbarVisible)}>
+        <motion.nav className='navbar' variants={variants}>
+          <button
+            aria-label={navbarVisible ? 'Close menu' : 'Open menu'}
+            aria-expanded={navbarVisible}
+            className='close-button'
+            onClick={() => setNavbarVisible(!navbarVisible)}>
             <Icon icon='simple-icons:x' color='black' width={25} />
           </button>
           <ul className='nav-list'>
