@@ -1,0 +1,10 @@
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  &__section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

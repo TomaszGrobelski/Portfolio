@@ -21,6 +21,8 @@ body {
 section {
   height: 100svh;
   height: 100vh;
+  max-height: 100svh;
+  max-height: 100vh;
   scroll-snap-align: center;
   background: $primaryBackGroundColor;
   color: white;
@@ -29,7 +31,11 @@ h1,
 h2,
 h3 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 68px;
+  font-size: 4rem;
+}
+
+h4{
+  font-size: 1.5rem;
 }
 
 button {

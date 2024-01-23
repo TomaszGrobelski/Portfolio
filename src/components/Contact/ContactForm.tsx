@@ -41,7 +41,7 @@ const ContactForm = () => {
             setName(e.target.value);
             setIsNameValid(validateName(e.target.value));
           }}
-          className={isNameValid ? 'valid-input' : 'invalid'}
+          className={`input-field ${isNameValid ? '' : 'invalid'}`}
         />
         <input
           name='email'
@@ -53,7 +53,7 @@ const ContactForm = () => {
             setEmail(e.target.value);
             setIsEmailValid(validateEmail(e.target.value));
           }}
-          className={isEmailValid ? 'valid-input' : 'invalid'}
+          className={`input-field ${isEmailValid ? '' : 'invalid'}`}
         />
       </div>
       <textarea
@@ -68,7 +68,7 @@ const ContactForm = () => {
           setText(e.target.value);
           setIsTextValid(validateText(e.target.value));
         }}
-        className={isTextValid ? 'valid-text' : 'invalid'}></textarea>
+        className={`textarea-field ${isTextValid ? '' : 'invalid'}`}></textarea>
       <button className='submit-button' type='submit'>
         Send Message
       </button>
