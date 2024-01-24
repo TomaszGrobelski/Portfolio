@@ -1,10 +1,26 @@
+@import '../Global/app.scss';
+
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  &__section{
+  gap: 3.5rem;
+  color: $primaryBackGroundColor;
+  &__section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.3rem;
+    a {
+      color: $primaryBackGroundColor;
+    }
+  }
+  &__header {
+    letter-spacing: 1px;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    font-size: 1.1rem;
   }
 }

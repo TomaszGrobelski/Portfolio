@@ -15,9 +15,11 @@
       width: 100%;
       object-fit: cover;
       object-position: top;
+
       &:hover {
         animation: scrollDown 5s linear infinite;
       }
+
     }
   }
   &__info {
@@ -51,5 +53,14 @@
   }
   100% {
     transform: translateY(-1500px);
+  }
+}
+
+@keyframes -scrollDown {
+  0% {
+    transform: translateY(-1500px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
