@@ -1,7 +1,9 @@
-.wrapper-light{
-    background: white;
+@import '../Global//app.scss';
+
+.wrapper-light {
+  background: white;
 }
 
-.wrapper-dark{
-    background-color: #b1b1b1;
+.wrapper-dark {
+  background-color: $primaryBackGroundColor;
 }
