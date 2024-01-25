@@ -28,9 +28,6 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
       const project2Offset = project2Ref.current!.getBoundingClientRect()!.top + window.scrollY;
       const contactOffset = contactRef.current!.getBoundingClientRect()!.top + window.scrollY;
 
-      console.log(currentHeight);
-      console.log(aboutOffset, 'about');
-
       if (distanceFromTop >= heroOffset) {
         setActiveItem('home');
       }

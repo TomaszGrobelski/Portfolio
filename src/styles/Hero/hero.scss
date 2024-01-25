@@ -10,8 +10,6 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
 
     .left-box {
       position: relative;
@@ -93,7 +91,7 @@
           overflow: hidden;
           border: 2px white solid;
           box-shadow: 0 0 15px white;
-          animation: spinShape 25s infinite linear;
+          animation: spinShape 40s infinite linear;
           z-index: 15;
         }
       }

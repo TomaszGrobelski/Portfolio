@@ -35,10 +35,10 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             <Icon icon='skill-icons:html' width='50' />
             <Icon icon='devicon:css3' width='50' />
             <Icon icon='skill-icons:sass' width='50' />
-            <Icon icon='skill-icons:javascript' width='50' />
-            <Icon icon='logos:react' width='50' />
             <Icon icon='skill-icons:tailwindcss-dark' width='50' />
+            <Icon icon='skill-icons:javascript' width='50' />
             <Icon icon='logos:typescript-icon' width='50' />
+            <Icon icon='logos:react' width='50' />
           </div>
           <div className='tech-box__list'>
             <Icon icon='skill-icons:nodejs-dark' width='50' />
