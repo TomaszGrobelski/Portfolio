@@ -1,7 +1,11 @@
-import '../../styles/Container/container.scss'
+import '../../styles/Container/container.scss';
 
-const Container = ({ children }: { children: React.ReactNode }) => {
-  return <div className="container">{children}</div>;
+interface ContainerProps {
+  children: React.ReactNode;
+}
+
+const Container = ({ children }: ContainerProps) => {
+  return <div className='container'>{children}</div>;
 };
 
 export default Container;

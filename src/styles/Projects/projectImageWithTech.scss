@@ -5,17 +5,16 @@
   flex-direction: column;
   align-items: start;
   gap: 1rem;
-  width: 90vw;
+  width: 100%;
   &__container {
     overflow: hidden;
     max-height: 70svh;
-    width: 90vw;
+    width: 100%;
     border-radius: 2rem;
     &-image {
       width: 100%;
       object-fit: cover;
       object-position: top;
-
       &:hover {
         animation: scrollDown 5s linear infinite;
       }

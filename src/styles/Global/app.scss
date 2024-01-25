@@ -14,9 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: $primaryBackGroundColor;
-}
 
 section {
   height: 100svh;
@@ -27,6 +24,7 @@ section {
   background: $primaryBackGroundColor;
   color: white;
 }
+
 h1,
 h2,
 h3 {
