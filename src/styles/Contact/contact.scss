@@ -1,4 +1,4 @@
-@import '../../styles//Global//app.scss';
+@import '../../styles/Global/app.scss';
 
 .contact {
   display: flex;
@@ -16,12 +16,11 @@
   }
   &__container {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 60% 40%;
     justify-items: start;
     gap: 3rem;
     width: 90%;
-    height: 100%;
 
     @include respond-to('medium') {
       grid-template-columns: 100%;
@@ -39,9 +38,8 @@
   }
   &__copyright {
     font-size: 1.2rem;
-    padding: 1rem;
-    padding-bottom: 1rem;
     margin-top: auto;
+    width: 100%;
     &-fullname {
       font-weight: 600;
     }

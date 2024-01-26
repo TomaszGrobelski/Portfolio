@@ -12,47 +12,52 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
         <div className='photo-box'>
           <img src={aboutPhoto} alt='about-photo' />
         </div>
-        <div className='description-box'>
-          <h3>Hi there</h3>
-          <p>My name is Tomasz and I'm frontend developer</p>
-          <p>
-            Having immersed myself in the world of web development for a year now, I continuously strive to expand my
-            skill set and stay up-to-date with the latest technologies and trends. I enjoy tackling challenges and
-            creating seamless user interfaces that leave a lasting impression.
-          </p>
-          <p>
-            For half of my life, I passionately played soccer, but a couple of knee surgeries have led me to adjust my
-            physical activities. Despite the challenges, I've redirected my energy towards gym workouts and cycling
-            adventures. Exploring new cycling routes and pushing my limits in the gym have become integral parts of my
-            lifestyle. I believe in maintaining a balance between a fulfilling professional career and a healthy, active
-            life outside of work.
-          </p>
-          <p> Feel free to explore my portfolio to see some of projects I've had made.</p>
-        </div>
-        <div className='tech-box'>
-          <h4 className='tech-box__header'>MY TECH</h4>
-          <div className='tech-box__list'>
-            <Icon icon='skill-icons:html' width='50' />
-            <Icon icon='devicon:css3' width='50' />
-            <Icon icon='skill-icons:sass' width='50' />
-            <Icon icon='skill-icons:tailwindcss-dark' width='50' />
-            <Icon icon='skill-icons:javascript' width='50' />
-            <Icon icon='logos:typescript-icon' width='50' />
-            <Icon icon='logos:react' width='50' />
+        <div className='description-wrapper'>
+          <div className='description-box'>
+            <h3>Hi there</h3>
+            <p>My name is Tomasz and I'm frontend developer</p>
+            <p>
+              Having immersed myself in the world of web development for a year now, I continuously strive to expand my
+              skill set and stay up-to-date with the latest technologies and trends. I enjoy tackling challenges and
+              creating seamless user interfaces that leave a lasting impression.
+            </p>
+            <p>
+              For half of my life, I passionately played soccer, but a couple of knee surgeries have led me to adjust my
+              physical activities. Despite the challenges, I've redirected my energy towards gym workouts and cycling
+              adventures. Exploring new cycling routes and pushing my limits in the gym have become integral parts of my
+              lifestyle. I believe in maintaining a balance between a fulfilling professional career and a healthy,
+              active life outside of work.
+            </p>
+            <p> Feel free to explore my portfolio to see some of projects I've had made.</p>
           </div>
-          <div className='tech-box__list'>
-            <Icon icon='skill-icons:nodejs-dark' width='50' />
-            <Icon icon='skill-icons:expressjs-dark' width='50' />
-            <Icon icon='skill-icons:mongodb' width='50' />
-          </div>
-          <div className='tech-box__list'>
-            <Icon icon='devicon:vscode' width='50' />
-            <Icon icon='logos:prettier' width='50' />
-            <Icon icon='devicon:eslint' width='50' />
-            <Icon icon='skill-icons:git' width='50' />
-            <Icon icon='uiw:github' width='50' />
-            <Icon icon='vscode-icons:file-type-vite' width='50' />
-            <Icon icon='skill-icons:babel' width='50' />
+          <div className='tech-box'>
+            <h4 className='tech-box__header'>MY TECH</h4>
+            <p className='tech-box__title'>Front-end :</p>
+            <div className='tech-box__list'>
+              <Icon icon='skill-icons:html' width='40' />
+              <Icon icon='devicon:css3' width='40' />
+              <Icon icon='skill-icons:sass' width='40' />
+              <Icon icon='skill-icons:tailwindcss-dark' width='40' />
+              <Icon icon='skill-icons:javascript' width='40' />
+              <Icon icon='logos:typescript-icon' width='40' />
+              <Icon icon='logos:react' width='40' />
+            </div>
+            <p className='tech-box__title'>Back-end :</p>
+            <div className='tech-box__list'>
+              <Icon icon='skill-icons:nodejs-dark' width='40' />
+              <Icon icon='skill-icons:expressjs-dark' width='40' />
+              <Icon icon='skill-icons:mongodb' width='40' />
+            </div>
+            <p className='tech-box__title'>Tools :</p>
+            <div className='tech-box__list'>
+              <Icon icon='devicon:vscode' width='40' />
+              <Icon icon='logos:prettier' width='40' />
+              <Icon icon='devicon:eslint' width='40' />
+              <Icon icon='skill-icons:git' width='40' />
+              <Icon icon='uiw:github' width='40' />
+              <Icon icon='vscode-icons:file-type-vite' width='40' />
+              <Icon icon='skill-icons:babel' width='40' />
+            </div>
           </div>
         </div>
       </div>

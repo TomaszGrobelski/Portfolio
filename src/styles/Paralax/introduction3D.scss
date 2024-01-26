@@ -1,9 +1,11 @@
-// .section-3d{
-//     // display: flex;
-//     // justify-content: center;
-//     // align-items: center;
+@import '../Global/app.scss';
 
-//     &__name{
-       
-//     }
-// }
+.section-3d {
+  height: 70svh;
+  min-height: 70svh;
+  min-height: 70vh;
+  margin-bottom: 15rem;
+  @include respond-to('small') {
+    margin-bottom: 0rem;
+  }
+}

@@ -9,17 +9,16 @@ $primaryBackGroundColor: #1b1b1b;
   font-family: 'Lora', serif;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-snap-type: y mandatory;
+//   scroll-behavior: smooth;
+// }
 
 
 section {
-  height: 100svh;
-  height: 100vh;
-  max-height: 100svh;
-  max-height: 100vh;
+
+  min-height: 100svh;
+  min-height: 100vh;
   scroll-snap-align: center;
   background: $primaryBackGroundColor;
   color: white;
