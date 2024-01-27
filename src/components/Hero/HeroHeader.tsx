@@ -32,7 +32,7 @@ const HeroHeader = ({ className }: { className: string }) => {
         if (nameIteration >= authorName.length) {
           clearInterval(nameIntervalRef.current!);
         }
-      }, 30);
+      }, 50);
 
       surnameIntervalRef.current = setInterval(() => {
         setSurname((oldSurname) => {
@@ -52,7 +52,7 @@ const HeroHeader = ({ className }: { className: string }) => {
         if (surnameIteration >= authorSurname.length) {
           clearInterval(surnameIntervalRef.current!);
         }
-      }, 30);
+      }, 45);
     };
     const timeoutId = setTimeout(startAnimation, 1000);
 
