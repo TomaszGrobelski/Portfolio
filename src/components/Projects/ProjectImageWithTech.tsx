@@ -23,16 +23,16 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
         <motion.div
           className='project-image-with-tech__year'
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 1200 }}
-          transition={{ duration: 2, delay: 1.5}}
+          initial={{ opacity: 0, x: 600 }}
+          transition={{ duration: 2, delay: 1}}
           viewport={{ once: true }}>
           {year}
         </motion.div>
         <motion.div
           className='project-image-with-tech__tech'
           whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 1200 }}
-          transition={{ duration: 2, delay: 2 }}
+          initial={{ opacity: 0, x: 600 }}
+          transition={{ duration: 2, delay: 1.2 }}
           viewport={{ once: true }}>
           {tech}
         </motion.div>

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@500&display=swap');
 $primaryBackGroundColor: #1b1b1b;
 
 * {
@@ -16,10 +18,8 @@ $primaryBackGroundColor: #1b1b1b;
 
 
 section {
-
-  min-height: 100svh;
-  min-height: 100vh;
-  scroll-snap-align: center;
+  min-height: 70svh;
+  min-height: 70vh;
   background: $primaryBackGroundColor;
   color: white;
 }
@@ -32,8 +32,8 @@ h3 {
 }
 
 
-
 h4{
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 1.5rem;
 }
 

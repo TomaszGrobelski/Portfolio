@@ -24,7 +24,7 @@ const ContactDetails = () => {
         transition={{ duration: 2, delay: 0.5 }}
         viewport={{ once: true }}>
         <h4 className='contact-details__header'>Contact Details</h4>
-        <p className='contact-details__info'>
+        <p className='contact-details__info detail-mail'>
           <Icon icon='ic:baseline-mail' color='#1b1b1b' width={25} /> Tomasz.grobelski98@gmail.com
         </p>
         <p className='contact-details__info'>
@@ -35,7 +35,7 @@ const ContactDetails = () => {
         className='contact-details__section'
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: 200 }}
-        transition={{ duration: 2, delay: 1 }}
+        transition={{ duration: 2, delay: 0.75 }}
         viewport={{ once: true }}>
         <h4 className='contact-details__header'>Social media</h4>
         <a href='https://github.com/TomaszGrobelski' target='_blank' rel='noopener noreferrer'>
@@ -54,7 +54,7 @@ const ContactDetails = () => {
         className='contact-details__section'
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: 200 }}
-        transition={{ duration: 2, delay: 1.5 }}
+        transition={{ duration: 2, delay: 1 }}
         viewport={{ once: true }}>
         <h4 className='contact-details__header'>Location</h4>
         <p className='contact-details__info'>

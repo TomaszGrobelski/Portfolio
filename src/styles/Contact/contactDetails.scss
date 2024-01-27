@@ -23,4 +23,11 @@
     gap: 0.5rem;
     font-size: 1.1rem;
   }
+  .detail-mail{
+    font-size: 0.8rem;
+
+    @include respond-to('medium') {
+      font-size: 1rem;
+    }
+  }
 }

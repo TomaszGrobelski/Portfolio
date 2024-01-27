@@ -4,6 +4,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import BgWrapper from './components/Container/BgWrapper';
 import Container from './components/Container/Container';
+import ProjectsContainer from './components/Container/ProjectsContainer';
 import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import Paralax from './components/Paralax/Paralax';
@@ -30,10 +31,14 @@ function App() {
             contactRef={contactRef}></Navbar>
           <Hero ref={heroRef} />
           <Paralax />
-          <About ref={aboutRef} />
-          <Project1 ref={project1Ref} />
-          <Project2 ref={project2Ref} />
         </Container>
+        <About ref={aboutRef} />
+        <div className='scroll-container'>
+          <ProjectsContainer>
+            <Project1 ref={project1Ref} />
+            <Project2 ref={project2Ref} />
+          </ProjectsContainer>
+        </div>
       </BgWrapper>
       <Container>
         <Contact ref={contactRef} />

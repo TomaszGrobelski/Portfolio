@@ -32,7 +32,7 @@ const Project1 = forwardRef<HTMLSelectElement>((_, ref) => {
             rel='noopener noreferrer'
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 100 }}
-            transition={{ duration: 2, delay: 1.5 }}
+            transition={{ duration: 2, delay: 0.8 }}
             viewport={{ once: true }}>
             <GlassButton text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
           </motion.a>
@@ -41,7 +41,7 @@ const Project1 = forwardRef<HTMLSelectElement>((_, ref) => {
             aria-label='Demo link not available'
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 100 }}
-            transition={{ duration: 2, delay: 2 }}
+            transition={{ duration: 2, delay: 1 }}
             viewport={{ once: true }}>
             <GlassButton text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} disabled={true} />
           </motion.a>

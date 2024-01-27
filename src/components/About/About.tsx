@@ -12,25 +12,26 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
         className='about__header'
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
+        transition={{ duration: 3, delay: 0.5}}
         viewport={{ once: true }}>
         About
       </motion.h2>
       <div className='about__content'>
         <motion.div
           className='photo-box'
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -200 }}
-          transition={{ duration: 2, delay: 0.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 200 }}
+          transition={{ duration: 2, delay: 0.75 }}
           viewport={{ once: true }}>
           <img src={aboutPhoto} alt='about-photo' />
         </motion.div>
+
         <div className='description-wrapper'>
           <motion.div
             className='description-box'
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: 200 }}
-            transition={{ duration: 3, delay: 0.5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            transition={{ duration: 2, delay: 0.75 }}
             viewport={{ once: true }}>
             <h3>Hi there</h3>
             <p>My name is Tomasz and I'm frontend developer</p>
@@ -51,35 +52,41 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           <motion.div
             className='tech-box'
             whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 200 }}
-            transition={{ duration: 2, delay: 0.5 }}
+            initial={{ opacity: 0, y: 500 }}
+            transition={{ duration: 2, delay: 0.75 }}
             viewport={{ once: true }}>
             <h4 className='tech-box__header'>MY TECH</h4>
-            <p className='tech-box__title'>Front-end :</p>
-            <div className='tech-box__list'>
-              <Icon icon='skill-icons:html' width='40' />
-              <Icon icon='devicon:css3' width='40' />
-              <Icon icon='skill-icons:sass' width='40' />
-              <Icon icon='skill-icons:tailwindcss-dark' width='40' />
-              <Icon icon='skill-icons:javascript' width='40' />
-              <Icon icon='logos:typescript-icon' width='40' />
-              <Icon icon='logos:react' width='40' />
+            <div>
+              <p className='tech-box__title'>Front-end :</p>
+              <div className='tech-box__list'>
+                <Icon icon='skill-icons:html' width='50' />
+                <Icon icon='devicon:css3' width='50' />
+                <Icon icon='skill-icons:sass' width='50' />
+                <Icon icon='skill-icons:tailwindcss-dark' width='50' />
+                <Icon icon='skill-icons:javascript' width='50' />
+                <Icon icon='logos:typescript-icon' width='50' />
+                <Icon icon='logos:react' width='50' />
+              </div>
             </div>
-            <p className='tech-box__title'>Back-end :</p>
-            <div className='tech-box__list'>
-              <Icon icon='skill-icons:nodejs-dark' width='40' />
-              <Icon icon='skill-icons:expressjs-dark' width='40' />
-              <Icon icon='skill-icons:mongodb' width='40' />
+            <div>
+              <p className='tech-box__title'>Back-end :</p>
+              <div className='tech-box__list'>
+                <Icon icon='skill-icons:nodejs-dark' width='50' />
+                <Icon icon='skill-icons:expressjs-dark' width='50' />
+                <Icon icon='skill-icons:mongodb' width='50' />
+              </div>
             </div>
-            <p className='tech-box__title'>Tools :</p>
-            <div className='tech-box__list'>
-              <Icon icon='devicon:vscode' width='40' />
-              <Icon icon='logos:prettier' width='40' />
-              <Icon icon='devicon:eslint' width='40' />
-              <Icon icon='skill-icons:git' width='40' />
-              <Icon icon='uiw:github' width='40' />
-              <Icon icon='vscode-icons:file-type-vite' width='40' />
-              <Icon icon='skill-icons:babel' width='40' />
+            <div>
+              <p className='tech-box__title'>Tools :</p>
+              <div className='tech-box__list'>
+                <Icon icon='devicon:vscode' width='50' />
+                <Icon icon='logos:prettier' width='50' />
+                <Icon icon='devicon:eslint' width='50' />
+                <Icon icon='skill-icons:git' width='50' />
+                <Icon icon='uiw:github' width='50' />
+                <Icon icon='vscode-icons:file-type-vite' width='50' />
+                <Icon icon='skill-icons:babel' width='50' />
+              </div>
             </div>
           </motion.div>
         </div>
