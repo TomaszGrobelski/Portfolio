@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
 import aboutPhoto from '../../assets/aboutphoto.jpg';
@@ -7,13 +8,30 @@ import '../../styles/About/about.scss';
 const About = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
     <section className='about' ref={ref}>
-      <h2 className='about__header'>About</h2>
+      <motion.h2
+        className='about__header'
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 200 }}
+        transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
+        viewport={{ once: true }}>
+        About
+      </motion.h2>
       <div className='about__content'>
-        <div className='photo-box'>
+        <motion.div
+          className='photo-box'
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -200 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          viewport={{ once: true }}>
           <img src={aboutPhoto} alt='about-photo' />
-        </div>
+        </motion.div>
         <div className='description-wrapper'>
-          <div className='description-box'>
+          <motion.div
+            className='description-box'
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 200 }}
+            transition={{ duration: 3, delay: 0.5 }}
+            viewport={{ once: true }}>
             <h3>Hi there</h3>
             <p>My name is Tomasz and I'm frontend developer</p>
             <p>
@@ -29,8 +47,13 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
               active life outside of work.
             </p>
             <p> Feel free to explore my portfolio to see some of projects I've had made.</p>
-          </div>
-          <div className='tech-box'>
+          </motion.div>
+          <motion.div
+            className='tech-box'
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            viewport={{ once: true }}>
             <h4 className='tech-box__header'>MY TECH</h4>
             <p className='tech-box__title'>Front-end :</p>
             <div className='tech-box__list'>
@@ -58,7 +81,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
               <Icon icon='vscode-icons:file-type-vite' width='40' />
               <Icon icon='skill-icons:babel' width='40' />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

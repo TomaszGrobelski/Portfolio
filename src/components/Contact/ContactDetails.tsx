@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 
 import '../../styles/Contact/contactDetails.scss';
 
@@ -14,10 +15,14 @@ const ContactDetails = () => {
 
   const polandTime = formatter.format(now);
 
-
   return (
     <div className='contact-details'>
-      <div className='contact-details__section'>
+      <motion.div
+        className='contact-details__section'
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 200 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        viewport={{ once: true }}>
         <h4 className='contact-details__header'>Contact Details</h4>
         <p className='contact-details__info'>
           <Icon icon='ic:baseline-mail' color='#1b1b1b' width={25} /> Tomasz.grobelski98@gmail.com
@@ -25,8 +30,13 @@ const ContactDetails = () => {
         <p className='contact-details__info'>
           <Icon icon='icon-park-solid:phone-telephone' color='#1b1b1b' width={25} /> tel: +48 795 003 227
         </p>
-      </div>
-      <div className='contact-details__section'>
+      </motion.div>
+      <motion.div
+        className='contact-details__section'
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 200 }}
+        transition={{ duration: 2, delay: 1 }}
+        viewport={{ once: true }}>
         <h4 className='contact-details__header'>Social media</h4>
         <a href='https://github.com/TomaszGrobelski' target='_blank' rel='noopener noreferrer'>
           <p className='contact-details__info'>
@@ -39,8 +49,13 @@ const ContactDetails = () => {
             <Icon icon='bi:linkedin' color='#1b1b1b' width={25} /> LinkedIn
           </p>
         </a>
-      </div>
-      <div className='contact-details__section'>
+      </motion.div>
+      <motion.div
+        className='contact-details__section'
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 200 }}
+        transition={{ duration: 2, delay: 1.5 }}
+        viewport={{ once: true }}>
         <h4 className='contact-details__header'>Location</h4>
         <p className='contact-details__info'>
           <Icon icon='ion:location-sharp' color='#1b1b1b' width={25} /> Kraków, Poland
@@ -48,7 +63,7 @@ const ContactDetails = () => {
         <p className='contact-details__info'>
           <Icon icon='carbon:time-filled' color='#1b1b1b' width={25} /> {polandTime}
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

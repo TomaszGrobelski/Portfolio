@@ -39,7 +39,7 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             className='left-box__button'
             initial={{ x: '-200px', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 2, delay: 3 }}>
+            transition={{ duration: 2, delay: 4, ease: 'easeOut', type: 'spring', damping: 13, stiffness: 100 }}>
             <GlassButton text='HIRE ME' icon={<Icon icon='clarity:contract-line' color='white' />} />
           </motion.div>
         </div>

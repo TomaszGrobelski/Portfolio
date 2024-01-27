@@ -18,7 +18,6 @@ function App() {
   const project2Ref = useRef(null);
   const contactRef = useRef(null);
 
-
   return (
     <>
       <BgWrapper darkMood={true}>

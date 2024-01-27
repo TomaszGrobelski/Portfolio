@@ -124,7 +124,7 @@
   }
   .welcom {
     position: absolute;
-    right: 1rem;
+    right: 3rem;
     bottom: 1.5rem;
     color: white;
     justify-self: end;
@@ -142,7 +142,7 @@
       font-size: 5.5rem;
     }
     @include respond-to('small') {
-      font-size: 4rem;
+      font-size: 3.7rem;
     }
   }
   .social-media {
@@ -154,7 +154,7 @@
     align-items: end;
     gap: 8rem;
     background-color: $primaryBackGroundColor;
-    z-index: 0;
+    z-index: 2;
     &__box {
       display: flex;
       flex-direction: column;
