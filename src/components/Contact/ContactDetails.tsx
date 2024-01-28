@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 import '../../styles/Contact/contactDetails.scss';
@@ -23,15 +23,10 @@ const ContactDetails = () => {
     target: scrollRef,
     offset: ['0 1', '1 1'],
   });
-
+  const x = useTransform(scrollYProgress, [0, 1], ['300px', '0px']);
+  const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
   return (
-    <motion.div
-      className='contact-details'
-      ref={scrollRef}
-      style={{
-        scale: scrollYProgress,
-        opacity: scrollYProgress,
-      }}>
+    <motion.div className='contact-details' ref={scrollRef} style={{ x, opacity }}>
       <motion.div
         className='contact-details__section'
         // whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +48,7 @@ const ContactDetails = () => {
         // initial={{ opacity: 0, x: 200 }}
         // transition={{ duration: 2, delay: 0.75 }}
         // viewport={{ once: true }}
-        >
+      >
         <h4 className='contact-details__header'>Social media</h4>
         <a href='https://github.com/TomaszGrobelski' target='_blank' rel='noopener noreferrer'>
           <p className='contact-details__info'>
@@ -73,7 +68,7 @@ const ContactDetails = () => {
         // initial={{ opacity: 0, x: 200 }}
         // transition={{ duration: 2, delay: 1 }}
         // viewport={{ once: true }}
-        >
+      >
         <h4 className='contact-details__header'>Location</h4>
         <p className='contact-details__info'>
           <Icon icon='ion:location-sharp' color='#1b1b1b' width={25} /> Kraków, Poland

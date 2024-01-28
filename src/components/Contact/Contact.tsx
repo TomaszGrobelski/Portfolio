@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
 import '../../styles/Contact/contact.scss';
@@ -11,12 +11,17 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,
-    offset: ['0 1', '1 1'],
+    offset: ['start end', 'end end'],
   });
+  const y = useTransform(scrollYProgress, [0, 1], ['-1000px', '0px']);
+  const x = useTransform(scrollYProgress, [0, 1], ['-300px', '0px']);
+  const opacity =  useTransform(scrollYProgress, [0, 1], ['0', '1']);
+  const rotate=  useTransform(scrollYProgress, [0, 1], ['0', '1800deg']);
   return (
     <motion.section className='contact' ref={ref}>
       <motion.h2
         className='contact__header'
+        style={{ y, opacity, rotate }}
         // whileInView={{ opacity: 1, y: 0 }}
         // initial={{ opacity: 0, y: 200 }}
         // transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
@@ -30,23 +35,16 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
         <motion.div
           className='contact__description'
           ref={scrollRef}
-          style={{
-            scale: scrollYProgress,
-            opacity: scrollYProgress,
-          }}
-          // whileInView={{ opacity: 1, x: 0 }}
-          // initial={{ opacity: 0, x: -200 }}
-          // transition={{ duration: 3, delay: 0.5}}
-          // viewport={{ once: true }}
+          style={{x, opacity}}
         >
           <h3 className='contact__description-title'>Let's make something awesome together</h3>
           <ContactForm />
         </motion.div>
-        <ContactDetails/>
-        <div className='contact__copyright'>
-          Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span>
-        </div>
+        <ContactDetails />
       </motion.div>
+      <div className='contact__copyright'>
+        Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span>
+      </div>
     </motion.section>
   );
 });

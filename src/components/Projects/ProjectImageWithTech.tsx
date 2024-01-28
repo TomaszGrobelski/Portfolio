@@ -15,7 +15,7 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
         className='project-image-with-tech__container'
          whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 1.3, delay: 0.8 }}
+        transition={{ duration: 1.1, delay: 0.8 }}
         viewport={{ once: true }}
         >
         <img className='project-image-with-tech__container-image' src={image} alt={alt} />
@@ -25,7 +25,7 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
           className='project-image-with-tech__year'
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 600 }}
-          transition={{ duration: 2, delay: 1}}
+          transition={{ duration: 1.4, delay: 0.5}}
           viewport={{ once: true }}>
           {year}
         </motion.div>
@@ -33,7 +33,7 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
           className='project-image-with-tech__tech'
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 600 }}
-          transition={{ duration: 2, delay: 1.2 }}
+          transition={{ duration: 1.4, delay: 0.7 }}
           viewport={{ once: true }}>
           {tech}
         </motion.div>

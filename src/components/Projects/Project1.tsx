@@ -15,10 +15,10 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
   return (
     <motion.section style={{ x: props.x }} ref={ref} className='project project1'>
       <motion.h2
-      // whileInView={{ opacity: 1, y: 0 }}
-      // initial={{ opacity: 0, y: 200 }}
-      // transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
-      // viewport={{ once: true }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -100 }}
+      transition={{ duration: 2, delay: 2.5}}
+      viewport={{ once: true }}
       >
         Booking
       </motion.h2>
@@ -35,20 +35,20 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
             href='https://github.com/TomaszGrobelski/Booking'
             target='_blank'
             rel='noopener noreferrer'
-            // whileInView={{ opacity: 1, y: 0 }}
-            // initial={{ opacity: 0, y: 100 }}
-            // transition={{ duration: 2, delay: 0.8 }}
-            // viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            viewport={{ once: true }}
           >
             <GlassButton text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
           </motion.a>
           <motion.a
             aria-disabled={true}
             aria-label='Demo link not available'
-            // whileInView={{ opacity: 1, y: 0 }}
-            // initial={{ opacity: 0, y: 100 }}
-            // transition={{ duration: 2, delay: 1 }}
-            // viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            transition={{ duration: 1, delay: 1 }}
+            viewport={{ once: true }}
           >
             <GlassButton text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} disabled={true} />
           </motion.a>

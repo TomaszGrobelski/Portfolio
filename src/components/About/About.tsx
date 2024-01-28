@@ -11,8 +11,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
       <motion.h2
         className='about__header'
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 3, delay: 0.5 }}
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}>
         About
       </motion.h2>
@@ -21,7 +21,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           className='photo-box'
           whileInView={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 200 }}
-          transition={{ duration: 2, delay: 0.75 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
           viewport={{ once: true }}>
           <img src={aboutPhoto} alt='about-photo' />
         </motion.div>
@@ -31,7 +31,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             className='description-box'
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 200 }}
-            transition={{ duration: 2, delay: 0.75 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
             viewport={{ once: true }}>
             <h3>Hi there</h3>
             <p>My name is Tomasz and I'm frontend developer</p>
@@ -53,7 +53,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             className='tech-box'
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 500 }}
-            transition={{ duration: 2, delay: 0.75 }}
+            transition={{ duration: 1.2, delay: 0.5 }}
             viewport={{ once: true }}>
             <h4 className='tech-box__header'>MY TECH</h4>
             <div>

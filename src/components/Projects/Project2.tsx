@@ -14,10 +14,10 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
   return (
     <motion.section style={{ x: props.x }} ref={ref} className='project project2'>
       <motion.h2
-      // whileInView={{ opacity: 1, y: 0 }}
-      // initial={{ opacity: 0, y: 200 }}
-      // transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
-      // viewport={{ once: true }}
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: -100 }}
+      transition={{ duration: 2, delay: 2.5}}
+      viewport={{ once: true }}
       >
         Nika
       </motion.h2>
@@ -34,10 +34,10 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             href='https://github.com/TomaszGrobelski/nika'
             target='_blank'
             rel='noopener noreferrer'
-            // whileInView={{ opacity: 1, y: 0 }}
-            // initial={{ opacity: 0, y: 100 }}
-            // transition={{ duration: 2, delay: 0.8 }}
-            // viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            viewport={{ once: true }}
           >
             <GlassButton text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
           </motion.a>
@@ -46,10 +46,10 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             href='https://tomaszgrobelski.github.io/nika/'
             target='_blank'
             rel='noopener noreferrer'
-            // whileInView={{ opacity: 1, y: 0 }}
-            // initial={{ opacity: 0, y: 100 }}
-            // transition={{ duration: 2, delay: 1 }}
-            // viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            transition={{ duration: 1, delay: 1 }}
+            viewport={{ once: true }}
           >
             <GlassButton text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} />
           </motion.a>
