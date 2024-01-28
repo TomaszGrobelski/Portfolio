@@ -8,8 +8,6 @@ import ProjectsContainer from './components/Container/ProjectsContainer';
 import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
 import Paralax from './components/Paralax/Paralax';
-// import Project1 from './components/Projects/Project1';
-// import Project2 from './components/Projects/Project2';
 import './styles/Global/app.scss';
 
 function App() {
