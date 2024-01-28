@@ -39,7 +39,7 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             transition={{ duration: 1, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <GlassButton text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
+            <GlassButton ariaLabel='Open the Nika project on GitHub' text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
           </motion.a>
           <motion.a
             aria-label='Link to Nika demo project'
@@ -51,7 +51,7 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             transition={{ duration: 1, delay: 1 }}
             viewport={{ once: true }}
           >
-            <GlassButton text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} />
+            <GlassButton ariaLabel='Open Nika demo project' text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} />
           </motion.a>
         </div>
       </div>

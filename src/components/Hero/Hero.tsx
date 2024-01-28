@@ -1,7 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { forwardRef, useState } from 'react';
-import { useRef } from 'react';
+import { forwardRef, useState, useRef, RefObject } from 'react';
 
 import welcomMusic from '../../assets/Welcom.mp3';
 import AuthorImage from '../../assets/dsa.jpg';
@@ -9,7 +8,10 @@ import '../../styles/Hero/hero.scss';
 import GlassButton from './GlassButton';
 import HeroHeader from './HeroHeader';
 
-const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
+interface HeroProps {
+  contactRef: RefObject<HTMLElement>;
+}
+const Hero = forwardRef<HTMLDivElement, HeroProps>(({contactRef}, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [audioAvilabe, setAudioAvilable] = useState(true);
@@ -21,7 +23,11 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
       });
     }
   };
-
+  const handleScroll = () => {
+    if (contactRef && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section ref={ref} className='hero'>
       <div className='hero__wrapper'>
@@ -41,7 +47,13 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             initial={{ x: '-200px', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 3, delay: 4, ease: 'easeOut', type: 'spring', damping: 11, stiffness: 200 }}>
-            <GlassButton text='HIRE ME' icon={<Icon icon='clarity:contract-line' color='white' />} />
+            <GlassButton
+              ariaLabel='Scroll to contact section'
+              onClick={handleScroll}
+              text='HIRE ME'
+              icon={<Icon icon='clarity:contract-line' color='white' />}
+              disabled={false}
+            />
           </motion.div>
         </div>
         <div className='right-box'>
@@ -80,7 +92,11 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             )}
             <audio ref={audioRef} src={welcomMusic}></audio>
           </button>
-          <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' aria-label='open Tomasz Grobelski profile page on Linkedin' target='_blank' rel='noopener noreferrer'>
+          <a
+            href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/'
+            aria-label='open Tomasz Grobelski profile page on Linkedin'
+            target='_blank'
+            rel='noopener noreferrer'>
             <Icon icon='devicon:linkedin' width={30} />
           </a>
           <a

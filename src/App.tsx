@@ -27,7 +27,7 @@ function App() {
             project1Ref={project1Ref}
             project2Ref={project2Ref}
             contactRef={contactRef}></Navbar>
-          <Hero ref={heroRef} />
+          <Hero ref={heroRef} contactRef={contactRef} />
           <Paralax />
         </Container>
         <About ref={aboutRef} />
