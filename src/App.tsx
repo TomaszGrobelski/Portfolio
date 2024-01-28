@@ -1,4 +1,3 @@
-import { SpeedInsights } from '@vercel/speed-insights/vue';
 import { useRef } from 'react';
 
 import About from './components/About/About';
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <>
-    <SpeedInsights />
       <BgWrapper darkMood={true}>
         <Container>
           <Navbar
