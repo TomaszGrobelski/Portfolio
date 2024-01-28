@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import { useRef } from 'react';
 
 import welcomMusic from '../../assets/Welcom.mp3';
@@ -12,11 +12,12 @@ import HeroHeader from './HeroHeader';
 const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [audioAvilabe, setAudioAvilable] = useState(true);
 
   const playAudio = () => {
     if (audioRef.current) {
-      audioRef.current.play().catch((error) => {
-        console.error('Nie można odtworzyć dźwięku:', error);
+      audioRef.current.play().catch(() => {
+        setAudioAvilable(false);
       });
     }
   };
@@ -50,7 +51,7 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 3, delay: 3 }}>
             <div className='spin-border'></div>
-            <img src={AuthorImage} alt='Author image' />
+            <img loading='lazy' src={AuthorImage} alt='Author image' />
           </motion.div>
         </div>
       </div>
@@ -69,7 +70,11 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
         transition={{ duration: 2, delay: 2 }}>
         <div className='social-media__box'>
           <button ref={buttonRef} onClick={playAudio}>
-            <Icon icon='charm:sound-up' color='white' width={30} />
+            {audioAvilabe ? (
+              <Icon icon='charm:sound-up' color='white' width={30} />
+            ) : (
+              <Icon icon='material-symbols:no-sound-outline' color='red' width={30} />
+            )}
             <audio ref={audioRef} src={welcomMusic}></audio>
           </button>
           <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' target='_blank' rel='noopener noreferrer'>

@@ -42,7 +42,7 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
           >
             <GlassButton text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
           </motion.a>
-          <motion.a
+          <motion.div
             aria-disabled={true}
             aria-label='Demo link not available'
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
             viewport={{ once: true }}
           >
             <GlassButton text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} disabled={true} />
-          </motion.a>
+          </motion.div>
         </div>
       </div>
     </motion.section>
