@@ -50,13 +50,13 @@ const ContactDetails = () => {
         // viewport={{ once: true }}
       >
         <h4 className='contact-details__header'>Social media</h4>
-        <a href='https://github.com/TomaszGrobelski' target='_blank' rel='noopener noreferrer'>
+        <a href='https://github.com/TomaszGrobelski' aria-label='open Tomasz Grobelski profile page on github' target='_blank' rel='noopener noreferrer'>
           <p className='contact-details__info'>
             <Icon icon='ri:github-fill' color='#1b1b1b' width={25} />
             Github
           </p>
         </a>
-        <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' target='_blank' rel='noopener noreferrer'>
+        <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' aria-label='open Tomasz Grobelski profile page on Linkedin' target='_blank' rel='noopener noreferrer'>
           <p className='contact-details__info'>
             <Icon icon='bi:linkedin' color='#1b1b1b' width={25} /> LinkedIn
           </p>

@@ -69,7 +69,10 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, delay: 2 }}>
         <div className='social-media__box'>
-          <button ref={buttonRef} onClick={playAudio}>
+          <button
+            aria-label={audioAvilabe ? 'Play the sound' : 'Sound is not avilable'}
+            ref={buttonRef}
+            onClick={playAudio}>
             {audioAvilabe ? (
               <Icon icon='charm:sound-up' color='white' width={30} />
             ) : (
@@ -77,10 +80,14 @@ const Hero = forwardRef<HTMLSelectElement>((_, ref) => {
             )}
             <audio ref={audioRef} src={welcomMusic}></audio>
           </button>
-          <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' target='_blank' rel='noopener noreferrer'>
+          <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' aria-label='open Tomasz Grobelski profile page on Linkedin' target='_blank' rel='noopener noreferrer'>
             <Icon icon='devicon:linkedin' width={30} />
           </a>
-          <a href='https://github.com/TomaszGrobelski'>
+          <a
+            href='https://github.com/TomaszGrobelski'
+            aria-label='open Tomasz Grobelski profile page on github'
+            target='_blank'
+            rel='noopener noreferrer'>
             <Icon icon='jam:github' color='white' width={30} />
           </a>
         </div>
