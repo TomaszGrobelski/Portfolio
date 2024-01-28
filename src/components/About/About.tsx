@@ -7,12 +7,12 @@ import '../../styles/About/about.scss';
 
 const About = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
-    <section className='about' ref={ref}>
+    <motion.section className='about' ref={ref}>
       <motion.h2
         className='about__header'
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 200 }}
-        transition={{ duration: 3, delay: 0.5}}
+        transition={{ duration: 3, delay: 0.5 }}
         viewport={{ once: true }}>
         About
       </motion.h2>
@@ -91,7 +91,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 });
 

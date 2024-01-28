@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
+import { useRef } from 'react';
 
 import '../../styles/Contact/contactDetails.scss';
 
@@ -15,14 +16,29 @@ const ContactDetails = () => {
 
   const polandTime = formatter.format(now);
 
+  //-----------------
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ['0 1', '1 1'],
+  });
+
   return (
-    <div className='contact-details'>
+    <motion.div
+      className='contact-details'
+      ref={scrollRef}
+      style={{
+        scale: scrollYProgress,
+        opacity: scrollYProgress,
+      }}>
       <motion.div
         className='contact-details__section'
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: 200 }}
-        transition={{ duration: 2, delay: 0.5 }}
-        viewport={{ once: true }}>
+        // whileInView={{ opacity: 1, x: 0 }}
+        // initial={{ opacity: 0, x: 200 }}
+        // transition={{ duration: 2, delay: 0.5 }}
+        // viewport={{ once: true }}
+      >
         <h4 className='contact-details__header'>Contact Details</h4>
         <p className='contact-details__info detail-mail'>
           <Icon icon='ic:baseline-mail' color='#1b1b1b' width={25} /> Tomasz.grobelski98@gmail.com
@@ -33,10 +49,11 @@ const ContactDetails = () => {
       </motion.div>
       <motion.div
         className='contact-details__section'
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: 200 }}
-        transition={{ duration: 2, delay: 0.75 }}
-        viewport={{ once: true }}>
+        // whileInView={{ opacity: 1, x: 0 }}
+        // initial={{ opacity: 0, x: 200 }}
+        // transition={{ duration: 2, delay: 0.75 }}
+        // viewport={{ once: true }}
+        >
         <h4 className='contact-details__header'>Social media</h4>
         <a href='https://github.com/TomaszGrobelski' target='_blank' rel='noopener noreferrer'>
           <p className='contact-details__info'>
@@ -52,10 +69,11 @@ const ContactDetails = () => {
       </motion.div>
       <motion.div
         className='contact-details__section'
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: 200 }}
-        transition={{ duration: 2, delay: 1 }}
-        viewport={{ once: true }}>
+        // whileInView={{ opacity: 1, x: 0 }}
+        // initial={{ opacity: 0, x: 200 }}
+        // transition={{ duration: 2, delay: 1 }}
+        // viewport={{ once: true }}
+        >
         <h4 className='contact-details__header'>Location</h4>
         <p className='contact-details__info'>
           <Icon icon='ion:location-sharp' color='#1b1b1b' width={25} /> Kraków, Poland
@@ -64,7 +82,7 @@ const ContactDetails = () => {
           <Icon icon='carbon:time-filled' color='#1b1b1b' width={25} /> {polandTime}
         </p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

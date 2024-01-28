@@ -1,12 +1,15 @@
 @import '../../styles/Global/app.scss';
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 20rem;
+  margin-top: 5rem;
+  width: 90%;
+  height: 100%;
+
   .project-container {
     display: flex;
     flex-direction: column;
@@ -26,5 +29,32 @@
   }
   @include respond-to('small') {
     padding-bottom: 10rem;
+  }
+}
+
+
+.project1 {
+  left: 40%;
+  @include respond-to('small') {
+    left: 30%;
+  }
+  @include respond-to('medium') {
+    left: 35%;
+  }
+  @include respond-to('large') {
+    left: 40%;
+  }
+}
+.project2 {
+  left: 80%;
+  padding-bottom: 10rem;
+  @include respond-to('small') {
+    left: 65%;
+  }
+  @include respond-to('medium') {
+    left: 70%;
+  }
+  @include respond-to('large') {
+    left: 70%;
   }
 }
