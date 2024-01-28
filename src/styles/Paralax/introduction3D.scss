@@ -6,6 +6,6 @@
   min-height: 70vh;
   margin-bottom: 15rem;
   @include respond-to('small') {
-    margin-bottom: 0rem;
+    display: none;
   }
 }

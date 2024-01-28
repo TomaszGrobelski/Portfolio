@@ -13,30 +13,21 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
     target: scrollRef,
     offset: ['start end', 'end end'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ['-1000px', '0px']);
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-1000px', '60px']);
   const x = useTransform(scrollYProgress, [0, 1], ['-300px', '0px']);
-  const opacity =  useTransform(scrollYProgress, [0, 1], ['0', '1']);
-  const rotate=  useTransform(scrollYProgress, [0, 1], ['0', '1800deg']);
+  const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
+  const rotate = useTransform(scrollYProgress, [0, 1], ['0', '1800deg']);
+
   return (
     <motion.section className='contact' ref={ref}>
-      <motion.h2
-        className='contact__header'
-        style={{ y, opacity, rotate }}
-        // whileInView={{ opacity: 1, y: 0 }}
-        // initial={{ opacity: 0, y: 200 }}
-        // transition={{ duration: 3, delay: 0.5, type: 'spring', damping: 12, stiffness: 100 }}
-        // viewport={{ once: true }}
-      >
+      <motion.h2 className='contact__header' style={{ y, opacity, rotate }}>
         <Icon icon='tabler:arrow-big-down-lines-filled' color='#1b1b1b' width={32} />
         Contact
         <Icon icon='tabler:arrow-big-down-lines-filled' color='#1b1b1b' width={32} />
       </motion.h2>
       <motion.div className='contact__container'>
-        <motion.div
-          className='contact__description'
-          ref={scrollRef}
-          style={{x, opacity}}
-        >
+        <motion.div className='contact__description' ref={scrollRef} style={{ x, opacity }}>
           <h3 className='contact__description-title'>Let's make something awesome together</h3>
           <ContactForm />
         </motion.div>

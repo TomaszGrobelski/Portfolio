@@ -8,13 +8,17 @@
   gap: 5rem;
   background-color: white;
   color: #1b1b1b;
-  padding-top: 10rem;
+  padding-top: 5rem;
 
   max-width: 1300px;
   &__header {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding-bottom: 5rem;
+    @include respond-to('medium') {
+      padding-bottom: 0rem;
+    }
   }
   &__container {
     display: grid;
