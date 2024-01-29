@@ -14,8 +14,8 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
   return (
     <motion.section style={{ x: props.x }} ref={ref} className='project project2'>
       <motion.h2
-      whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: -100 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      initial={{ opacity: 0, translateY: -100 }}
       transition={{ duration: 1.5, delay: 0.5}}
       viewport={{ once: true }}
       >
@@ -34,8 +34,8 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             href='https://github.com/TomaszGrobelski/nika'
             target='_blank'
             rel='noopener noreferrer'
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}
           >
@@ -46,8 +46,8 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             href='https://tomaszgrobelski.github.io/nika/'
             target='_blank'
             rel='noopener noreferrer'
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}
           >

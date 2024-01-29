@@ -35,18 +35,20 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
           <HeroHeader className='left-box__header' />
           <motion.p
             className='left-box__description'
-            initial={{ y: '200px', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 2, delay: 2 }}>
+            // initial={{ translateY: '200px', opacity: 0 }}
+            // animate={{ translateY: 0, opacity: 1 }}
+            // transition={{ duration: 2, delay: 2 }}
+            >
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
-            experiences.{' '}
+            experiences.
           </motion.p>
           <motion.div
             className='left-box__button'
-            initial={{ x: '-200px', opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 3.3, ease: 'easeOut' }}>
+            // initial={{ translateX: '-200px', opacity: 0 }}
+            // animate={{ translateX: 0, opacity: 1 }}
+            // transition={{ duration: 1.5, delay: 3.3, ease: 'easeOut' }}
+            >
             <GlassButton
               ariaLabel='Scroll to contact section'
               onClick={handleScroll}
@@ -59,9 +61,10 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
         <div className='right-box'>
           <motion.div
             className='image-container'
-            initial={{ y: '-300px', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 3, delay: 3 }}>
+            // initial={{ translateY: '-300px', opacity: 0 }}
+            // animate={{ translateY: 0, opacity: 1 }}
+            // transition={{ duration: 3, delay: 3 }}
+            >
             <div className='spin-border'></div>
             <img loading='lazy' src={AuthorImage} alt='Author image' />
           </motion.div>
@@ -70,16 +73,18 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
       <div className='blured-circle'></div>
       <motion.span
         className='welcom'
-        initial={{ y: '200px', opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 3, delay: 2 }}>
+        // initial={{ translateY: '200px', opacity: 0 }}
+        // animate={{ translateY: 0, opacity: 1 }}
+        // transition={{ duration: 3, delay: 2 }}
+        >
         WELCOME
       </motion.span>
       <motion.div
         className='social-media'
-        initial={{ x: '-200px', opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 2, delay: 2 }}>
+        // initial={{ translateX: '-200px', opacity: 0 }}
+        // animate={{ translateX: 0, opacity: 1 }}
+        // transition={{ duration: 2, delay: 2 }}
+        >
         <div className='social-media__box'>
           <button
             aria-label={audioAvilabe ? 'Play the sound' : 'Sound is not avilable'}

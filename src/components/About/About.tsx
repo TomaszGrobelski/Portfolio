@@ -7,11 +7,11 @@ import '../../styles/About/about.scss';
 
 const About = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
-    <motion.section className='about' ref={ref}>
+    <motion.section  className='about' ref={ref}>
       <motion.h2
         className='about__header'
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        initial={{ opacity: 0, translateY: 100 }}
         transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}>
         About
@@ -19,8 +19,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
       <div className='about__content'>
         <motion.div
           className='photo-box'
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          initial={{ opacity: 0, translateY: 200 }}
           transition={{ duration: 1.5, delay: 0.5 }}
           viewport={{ once: true }}>
           <img loading='lazy' src={aboutPhoto} alt='about-photo' />
@@ -29,8 +29,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
         <div className='description-wrapper'>
           <motion.div
             className='description-box'
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            initial={{ opacity: 0, translateY: 200 }}
             transition={{ duration: 1.5, delay: 0.5 }}
             viewport={{ once: true }}>
             <h3>Hi there</h3>
@@ -51,8 +51,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           </motion.div>
           <motion.div
             className='tech-box'
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 300 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            initial={{ opacity: 0, translateY: 300 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}>
             <h4 className='tech-box__header'>MY TECH</h4>

@@ -8,9 +8,11 @@ interface GlassButtonProps {
   onClick?: () => void;
 }
 const GlassButton = ({ ariaLabel, text, icon, disabled, onClick }: GlassButtonProps) => {
+  const ariaProps = ariaLabel && ariaLabel !== text ? { 'aria-label': ariaLabel } : {};
+
   return (
     <button
-      aria-label={ariaLabel}
+      {...ariaProps}
       onClick={onClick}
       disabled={disabled}
       className={disabled ? 'off-glass-button' : 'glass-button'}>

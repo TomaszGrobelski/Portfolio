@@ -24,13 +24,13 @@ const ContactDetails = () => {
 
   const { scrollYProgress } = useScroll({
     target: scrollRef,
-    offset: ['0 1', '1 1'],
+    offset: ['start end', 'center end'],
   });
   const x = useTransform(scrollYProgress, [0, 1], ['300px', '0px']);
   const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
 
   return (
-    <motion.div className='contact-details' ref={scrollRef} style={{ x, opacity }}>
+    <motion.div className='contact-details' ref={scrollRef} style={{ translateX:x, opacity }}>
       <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Contact Details</h4>
         <button onClick={handleMailCopy} className='contact-details__info info-item' aria-label='Copy email'>
