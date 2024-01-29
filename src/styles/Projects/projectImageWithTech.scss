@@ -18,6 +18,9 @@
       object-position: top;
       &:hover {
         animation: scrollDown 5s linear infinite;
+        @include respond-to('small') {
+          animation: none;
+        }
       }
 
     }
