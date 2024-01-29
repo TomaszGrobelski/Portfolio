@@ -1,27 +1,30 @@
 import { Icon } from '@iconify/react';
-import { MotionValue, motion } from 'framer-motion';
-import { forwardRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 import NikaFullPage from '../../assets/NikaFullPage.png';
 import '../../styles/Projects/project.scss';
 import GlassButton from '../Hero/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
 
-interface Project2Props {
-  x: MotionValue<string>;
-}
-const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
+const Project2 = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start end', 'end end'],
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ['0', '-100%']);
   return (
-    <motion.section style={{ x: props.x }} ref={ref} className='project project2'>
+    <motion.section style={{ translateX: x }}  className='project project2'>
       <motion.h2
-      whileInView={{ opacity: 1, translateY: 0 }}
-      initial={{ opacity: 0, translateY: -100 }}
-      transition={{ duration: 1.5, delay: 0.5}}
-      viewport={{ once: true }}
-      >
+        whileInView={{ opacity: 1, translateY: 0 }}
+        initial={{ opacity: 0, translateY: -100 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        viewport={{ once: true }}>
         Nika
       </motion.h2>
-      <div className='project-container'>
+      <div ref={targetRef} className='project-container'>
         <ProjectImageWithTech
           image={NikaFullPage}
           alt='Full hero page Nika'
@@ -37,9 +40,12 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             whileInView={{ opacity: 1, translateY: 0 }}
             initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <GlassButton ariaLabel='Open the Nika project on GitHub' text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
+            viewport={{ once: true }}>
+            <GlassButton
+              ariaLabel='Open the Nika project on GitHub'
+              text='Github'
+              icon={<Icon icon='mingcute:github-fill' color='white' width={25} />}
+            />
           </motion.a>
           <motion.a
             aria-label='Link to Nika demo project'
@@ -49,14 +55,17 @@ const Project2 = forwardRef<HTMLDivElement, Project2Props>((props, ref) => {
             whileInView={{ opacity: 1, translateY: 0 }}
             initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <GlassButton ariaLabel='Open Nika demo project' text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} />
+            viewport={{ once: true }}>
+            <GlassButton
+              ariaLabel='Open Nika demo project'
+              text='Demo'
+              icon={<Icon icon='fa:play-circle-o' width={25} />}
+            />
           </motion.a>
         </div>
       </div>
     </motion.section>
   );
-});
+};
 
 export default Project2;

@@ -7,7 +7,7 @@ import '../../styles/About/about.scss';
 
 const About = forwardRef<HTMLSelectElement>((_, ref) => {
   return (
-    <motion.section  className='about' ref={ref}>
+    <motion.section className='about' ref={ref}>
       <motion.h2
         className='about__header'
         whileInView={{ opacity: 1, translateY: 0 }}
@@ -41,8 +41,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             </p>
             <p>
               For half of my life, I passionately played soccer, but a couple of knee surgeries have led me to adjust my
-              physical activities. Despite the challenges, I've redirected my energy towards gym workouts and cycling
-              adventures. Exploring new cycling routes and pushing my limits in the gym have become integral parts of my
+              physical activities. Despite the challenges, I've redirected my energy towards programing and gym
+              workouts. Pushing my limits in the gym have become integral parts of my
               lifestyle. I believe in maintaining a balance between a fulfilling professional career and a healthy,
               active life outside of work.
             </p>

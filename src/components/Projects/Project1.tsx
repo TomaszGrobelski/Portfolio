@@ -1,28 +1,31 @@
 import { Icon } from '@iconify/react';
-import { motion, MotionValue } from 'framer-motion';
-import { forwardRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 import BookingFullPage from '../../assets/BookingFullPage.png';
 import '../../styles/Projects/project.scss';
 import GlassButton from '../Hero/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
 
-interface Project1Props {
-  x: MotionValue<string> ;  
+const Project1 = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start end', 'end end'],
+  });
 
-}
-const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
+  const x = useTransform(scrollYProgress, [0, 1], ['0', '-100%']);
+
   return (
-    <motion.section style={{ x: props.x }} ref={ref} className='project project1'>
+    <motion.section style={{ translateX: x }} className='project project1'>
       <motion.h2
-      whileInView={{ opacity: 1, translateY: 0 }}
-      initial={{ opacity: 0, translateY: -100 }}
-      transition={{ duration: 1.5, delay: 0.5}}
-      viewport={{ once: true }}
-      >
+        whileInView={{ opacity: 1, translateY: 0 }}
+        initial={{ opacity: 0, translateY: -100 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        viewport={{ once: true }}>
         Booking
       </motion.h2>
-      <div className='project-container'>
+      <div ref={targetRef} className='project-container'>
         <ProjectImageWithTech
           image={BookingFullPage}
           alt='Booking'
@@ -38,9 +41,12 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
             whileInView={{ opacity: 1, translateY: 0 }}
             initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <GlassButton ariaLabel='Open the Booking project on GitHub' text='Github' icon={<Icon icon='mingcute:github-fill' color='white' width={25} />} />
+            viewport={{ once: true }}>
+            <GlassButton
+              ariaLabel='Open the Booking project on GitHub'
+              text='Github'
+              icon={<Icon icon='mingcute:github-fill' color='white' width={25} />}
+            />
           </motion.a>
           <motion.div
             aria-disabled={true}
@@ -48,14 +54,18 @@ const Project1 = forwardRef<HTMLDivElement, Project1Props>((props, ref) => {
             whileInView={{ opacity: 1, translateY: 0 }}
             initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <GlassButton ariaLabel='Button is not avilable' text='Demo' icon={<Icon icon='fa:play-circle-o' width={25} />} disabled={true} />
+            viewport={{ once: true }}>
+            <GlassButton
+              ariaLabel='Button is not avilable'
+              text='Demo'
+              icon={<Icon icon='fa:play-circle-o' width={25} />}
+              disabled={true}
+            />
           </motion.div>
         </div>
       </div>
     </motion.section>
   );
-});
+};
 
 export default Project1;
