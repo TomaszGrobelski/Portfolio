@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion} from 'framer-motion';
+
 
 import '../../styles/Container/projectsContainer.scss';
 import Project1 from '../Projects/Project1';
@@ -11,19 +11,12 @@ interface ProjectsContainerProps {
 }
 
 const ProjectsContainer: React.FC<ProjectsContainerProps> = ({project1Ref, project2Ref}) => {
-  const targetRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end start'],
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ['0', '-100vw']);
   
   return (
-    <motion.div className='scroll-container' ref={targetRef}>
-      <Project1 x={x} ref={project1Ref} />
-      <Project2 x={x} ref={project2Ref} />
+    <motion.div className='scroll-container' >
+      <Project1  ref={project1Ref} />
+      <Project2  ref={project2Ref} />
     </motion.div>
   );
 };

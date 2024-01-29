@@ -1,13 +1,13 @@
 import { Icon } from '@iconify/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, forwardRef } from 'react';
 
 import NikaFullPage from '../../assets/NikaFullPage.png';
 import '../../styles/Projects/project.scss';
 import GlassButton from '../Hero/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
 
-const Project2 = () => {
+const Project2 = forwardRef<HTMLDivElement>((_, ref) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -16,7 +16,7 @@ const Project2 = () => {
 
   const x = useTransform(scrollYProgress, [0, 1], ['0', '-100%']);
   return (
-    <motion.section style={{ translateX: x }}  className='project project2'>
+    <motion.section ref={ref} style={{ translateX: x }}  className='project project2'>
       <motion.h2
         whileInView={{ opacity: 1, translateY: 0 }}
         initial={{ opacity: 0, translateY: -100 }}
@@ -66,6 +66,6 @@ const Project2 = () => {
       </div>
     </motion.section>
   );
-};
+});
 
 export default Project2;
