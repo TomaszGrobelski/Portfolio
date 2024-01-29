@@ -93,7 +93,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               onClick={() => {
                 setTimeout(() => {
                   setActiveItem('home');
-                }, 1000);
+                }, 800);
                 scrollToSection(heroRef);
               }}>
               HOME
@@ -103,7 +103,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               onClick={() => {
                 setTimeout(() => {
                   setActiveItem('about');
-                }, 1000);
+                }, 800);
                 scrollToSection(aboutRef);
               }}>
               ABOUT
@@ -113,7 +113,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               onClick={() => {
                 setTimeout(() => {
                   setActiveItem('project1');
-                }, 1000);
+                }, 800);
                 scrollToSection(project1Ref);
               }}>
               PROJECT#1
@@ -123,7 +123,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               onClick={() => {
                 setTimeout(() => {
                   setActiveItem('project2');
-                }, 1000);
+                }, 800);
                 scrollToSection(project2Ref);
               }}>
               PROJECT#2
@@ -133,7 +133,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               onClick={() => {
                 setTimeout(() => {
                   setActiveItem('contact');
-                }, 1000);
+                }, 800);
                 scrollToSection(contactRef);
               }}>
               CONTACT

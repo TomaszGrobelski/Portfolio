@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 
-import aboutPhoto from '../../assets/aboutphoto.jpg';
+import aboutPhoto from '../../assets/authorImageAbout.jpg';
 import '../../styles/About/about.scss';
 
 const About = forwardRef<HTMLSelectElement>((_, ref) => {
@@ -25,7 +25,6 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           viewport={{ once: true }}>
           <img loading='lazy' src={aboutPhoto} alt='about-photo' width={500} height={600} />
         </motion.div>
-
         <div className='description-wrapper'>
           <motion.div
             className='description-box'
