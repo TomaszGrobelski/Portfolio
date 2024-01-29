@@ -36,21 +36,22 @@
       width: 50%;
       height: 100%;
       img {
-        width: 70%;
+        width: 60%;
         box-shadow: 0px 0px 10px white;
         border-radius: 10px;
         max-height: 35rem;
         object-fit: fill;
         @include respond-to('small') {
           width: 90%;
-          max-height: 10rem;
+          height: 17rem;
+
         }
         @include respond-to('medium') {
           width: 90%;
-          max-height: 25rem;
+          height: 23rem;
         }
         @include respond-to('large') {
-          width: 90%;
+          width: 80%;
           max-height: 30rem;
         }
       }

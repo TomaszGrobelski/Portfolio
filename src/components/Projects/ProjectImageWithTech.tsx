@@ -17,7 +17,7 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
         initial={{ opacity: 0, translateY: 200 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}>
-        <img loading='lazy' className='project-image-with-tech__container-image' src={image} alt={alt} />
+        <img loading='lazy' className='project-image-with-tech__container-image' src={image} alt={alt} width="1300" height="1300"  />
       </motion.div>
       <div className='project-image-with-tech__info'>
         <motion.div

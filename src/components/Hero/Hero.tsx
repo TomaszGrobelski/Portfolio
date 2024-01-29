@@ -35,9 +35,9 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
           <HeroHeader className='left-box__header' />
           <motion.p
             className='left-box__description'
-            // initial={{ translateY: '200px', opacity: 0 }}
-            // animate={{ translateY: 0, opacity: 1 }}
-            // transition={{ duration: 2, delay: 2 }}
+            initial={{ translateY: '100px', opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
             >
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
@@ -45,9 +45,9 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
           </motion.p>
           <motion.div
             className='left-box__button'
-            // initial={{ translateX: '-200px', opacity: 0 }}
-            // animate={{ translateX: 0, opacity: 1 }}
-            // transition={{ duration: 1.5, delay: 3.3, ease: 'easeOut' }}
+            initial={{ translateX: '-100px', opacity: 0 }}
+            animate={{ translateX: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 2}}
             >
             <GlassButton
               ariaLabel='Scroll to contact section'
@@ -61,29 +61,29 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
         <div className='right-box'>
           <motion.div
             className='image-container'
-            // initial={{ translateY: '-300px', opacity: 0 }}
-            // animate={{ translateY: 0, opacity: 1 }}
-            // transition={{ duration: 3, delay: 3 }}
+            initial={{ translateY: '-100px', opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
             >
             <div className='spin-border'></div>
-            <img loading='lazy' src={AuthorImage} alt='Author image' />
+            <img loading='lazy' src={AuthorImage} alt='Author image' width={330} height={350} />
           </motion.div>
         </div>
       </div>
       <div className='blured-circle'></div>
       <motion.span
         className='welcom'
-        // initial={{ translateY: '200px', opacity: 0 }}
-        // animate={{ translateY: 0, opacity: 1 }}
-        // transition={{ duration: 3, delay: 2 }}
+        initial={{ translateY: '100px', opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         >
         WELCOME
       </motion.span>
       <motion.div
         className='social-media'
-        // initial={{ translateX: '-200px', opacity: 0 }}
-        // animate={{ translateX: 0, opacity: 1 }}
-        // transition={{ duration: 2, delay: 2 }}
+        initial={{ translateX: '-200px', opacity: 0 }}
+        animate={{ translateX: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         >
         <div className='social-media__box'>
           <button

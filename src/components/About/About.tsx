@@ -23,7 +23,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           initial={{ opacity: 0, translateY: 200 }}
           transition={{ duration: 1.5, delay: 0.5 }}
           viewport={{ once: true }}>
-          <img loading='lazy' src={aboutPhoto} alt='about-photo' />
+          <img loading='lazy' src={aboutPhoto} alt='about-photo' width={500} height={600} />
         </motion.div>
 
         <div className='description-wrapper'>

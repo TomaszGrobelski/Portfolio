@@ -64,6 +64,7 @@
         letter-spacing: 2px;
         @include respond-to('small') {
           font-size: 1rem;
+          width: 19rem;
         }
       }
       &__button {
@@ -144,16 +145,16 @@
     z-index: 2;
     @include respond-to('large') {
       font-size: 7.5rem;
-      top: 34rem;
+      top: 36rem;
     }
     @include respond-to('medium') {
       font-size: 5.0rem;
-      top: 36rem;
+      top: 40rem;
     }
     @include respond-to('small') {
       font-size: 3.7rem;
       right: 1rem;
-      top: 37rem;
+      top: 35rem;
     }
   }
   .social-media {
