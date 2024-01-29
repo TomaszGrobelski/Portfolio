@@ -108,7 +108,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               }}>
               ABOUT
             </li>
-            <li
+            {/* <li
               className={activeItem === 'project1' ? 'active' : ''}
               onClick={() => {
                 setTimeout(() => {
@@ -127,7 +127,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
                 scrollToSection(project2Ref);
               }}>
               PROJECT#2
-            </li>
+            </li> */}
             <li
               className={activeItem === 'contact' ? 'active' : ''}
               onClick={() => {
