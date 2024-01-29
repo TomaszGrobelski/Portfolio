@@ -9,8 +9,8 @@
   background-color: white;
   color: #1b1b1b;
   padding-top: 5rem;
-
   max-width: 1300px;
+  min-height: 50vh;
   &__header {
     display: flex;
     align-items: center;
@@ -21,16 +21,14 @@
     }
   }
   &__container {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 60% 40%;
-    justify-items: start;
+    display: flex;
+    justify-content: space-between;
     gap: 3rem;
     width: 90%;
-
-    @include respond-to('medium') {
-      grid-template-columns: 100%;
-      justify-items: start;
+    margin-left: 1rem;
+    @include respond-to('large') {
+      flex-direction: column;
+      align-items: start;
     }
   }
   &__description {
@@ -43,9 +41,19 @@
     }
   }
   &__copyright {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
     font-size: 1.2rem;
-    margin-top: auto;
     width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    @include respond-to('small') {
+      font-size: 1rem;
+      margin-right: 0rem;
+    }
     &-fullname {
       font-weight: 600;
     }

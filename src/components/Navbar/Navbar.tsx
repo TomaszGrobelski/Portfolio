@@ -81,7 +81,11 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
             aria-expanded={navbarVisible}
             className='close-button'
             onClick={() => setNavbarVisible(!navbarVisible)}>
-            <Icon icon='simple-icons:x' color='black' width={25} />
+            {navbarVisible ? (
+              <Icon icon='simple-icons:x' color='black' width={25} />
+            ) : (
+              <Icon icon='eva:menu-outline' color='#1b1b1b' width={28} />
+            )}
           </button>
           <ul className='nav-list'>
             <li
@@ -136,6 +140,11 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
             </li>
           </ul>
         </motion.nav>
+        <div
+          className={navbarVisible ? 'screen': 'none'}
+          onClick={() => {
+            setNavbarVisible(false);
+          }}></div>
       </motion.div>
     </>
   );

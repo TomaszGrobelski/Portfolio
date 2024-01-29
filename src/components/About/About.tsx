@@ -52,8 +52,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
           <motion.div
             className='tech-box'
             whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 500 }}
-            transition={{ duration: 1.2, delay: 0.5 }}
+            initial={{ opacity: 0, y: 300 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}>
             <h4 className='tech-box__header'>MY TECH</h4>
             <div>
@@ -86,6 +86,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
                 <Icon icon='uiw:github' width='50' />
                 <Icon icon='vscode-icons:file-type-vite' width='50' />
                 <Icon icon='skill-icons:babel' width='50' />
+                <Icon icon='icon-park-solid:seo' width={50} />
               </div>
             </div>
           </motion.div>

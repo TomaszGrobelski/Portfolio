@@ -1,4 +1,5 @@
 @import '../Global/app.scss';
+
 .sidebar {
   position: relative;
   .navbar {
@@ -35,7 +36,7 @@
       display: grid;
       gap: 2rem;
       padding-block: 2rem;
-      font-size: 2rem;
+      font-size: 1.5rem;
       @include respond-to('small') {
         font-size: 1rem;
         gap: 1.5rem;
@@ -75,5 +76,19 @@
         }
       }
     }
+  }
+  .screen {
+    position: fixed;
+    top: 0;
+    left: 218px;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    @include respond-to('small') {
+      left: 172px;
+    }
+  }
+  .none{
+    display: none;
   }
 }

@@ -1,9 +1,9 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
-import { forwardRef, useState, useRef, RefObject } from 'react';
+import { RefObject, forwardRef, useRef, useState } from 'react';
 
+import AuthorImage from '../../assets/HeroImage.jpg';
 import welcomMusic from '../../assets/Welcom.mp3';
-import AuthorImage from '../../assets/dsa.jpg';
 import '../../styles/Hero/hero.scss';
 import GlassButton from './GlassButton';
 import HeroHeader from './HeroHeader';
@@ -11,7 +11,7 @@ import HeroHeader from './HeroHeader';
 interface HeroProps {
   contactRef: RefObject<HTMLElement>;
 }
-const Hero = forwardRef<HTMLDivElement, HeroProps>(({contactRef}, ref) => {
+const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [audioAvilabe, setAudioAvilable] = useState(true);
@@ -46,7 +46,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({contactRef}, ref) => {
             className='left-box__button'
             initial={{ x: '-200px', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 3, delay: 4, ease: 'easeOut', type: 'spring', damping: 11, stiffness: 200 }}>
+            transition={{ duration: 1.5, delay: 3.3, ease: 'easeOut' }}>
             <GlassButton
               ariaLabel='Scroll to contact section'
               onClick={handleScroll}
@@ -72,7 +72,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({contactRef}, ref) => {
         className='welcom'
         initial={{ y: '200px', opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 3, delay: 3 }}>
+        transition={{ duration: 3, delay: 2 }}>
         WELCOME
       </motion.span>
       <motion.div

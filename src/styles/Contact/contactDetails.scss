@@ -12,8 +12,31 @@
     a {
       color: $primaryBackGroundColor;
     }
+    .info-item :nth-child(2) {
+      position: relative;
+    }
+    .info-item :nth-child(2)::before,
+    .info-item :nth-child(2)::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: black;
+      transition: all 500ms ease;
+      transform: translateX(-50%);
+    }
+    .info-item:hover :nth-child(2)::before {
+      width: 50%;
+    }
+    .info-item:hover :nth-child(2)::after {
+      transform: translateX(-50%) scaleX(2); /* Rozszerz o 100% od środka */
+      width: 50%;
+    }
   }
   &__header {
+    font-size: 1.8rem;
     letter-spacing: 1px;
   }
   &__info {
@@ -22,12 +45,5 @@
     flex-wrap: nowrap;
     gap: 0.5rem;
     font-size: 1.1rem;
-  }
-  .detail-mail{
-    font-size: 0.8rem;
-
-    @include respond-to('medium') {
-      font-size: 1rem;
-    }
   }
 }

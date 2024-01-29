@@ -1,22 +1,25 @@
 import { Icon } from '@iconify/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
+import cvTomaszGrobelski from '../../assets/CV_Tomasz_Grobelski.pdf';
 import '../../styles/Contact/contactDetails.scss';
 
 const ContactDetails = () => {
-  const now = new Date();
-  const options: Intl.DateTimeFormatOptions = {
-    timeZone: 'Europe/Warsaw',
-    hour12: false,
-    hour: '2-digit',
-    minute: '2-digit',
+  const [mailCopied, setMailCopied] = useState(false);
+  const [numberCopied, setNumberCopied] = useState(false);
+
+  const handleMailCopy = () => {
+    navigator.clipboard.writeText('Tomasz.grobelski98@gmail.com');
+    setMailCopied(true);
+    setNumberCopied(false);
   };
-  const formatter = new Intl.DateTimeFormat('en-US', options);
+  const handleNumberCopy = () => {
+    navigator.clipboard.writeText('795003227');
+    setNumberCopied(true);
+    setMailCopied(false);
+  };
 
-  const polandTime = formatter.format(now);
-
-  //-----------------
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -25,56 +28,63 @@ const ContactDetails = () => {
   });
   const x = useTransform(scrollYProgress, [0, 1], ['300px', '0px']);
   const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
+
   return (
     <motion.div className='contact-details' ref={scrollRef} style={{ x, opacity }}>
-      <motion.div
-        className='contact-details__section'
-        // whileInView={{ opacity: 1, x: 0 }}
-        // initial={{ opacity: 0, x: 200 }}
-        // transition={{ duration: 2, delay: 0.5 }}
-        // viewport={{ once: true }}
-      >
+      <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Contact Details</h4>
-        <p className='contact-details__info detail-mail'>
-          <Icon icon='ic:baseline-mail' color='#1b1b1b' width={25} /> Tomasz.grobelski98@gmail.com
-        </p>
-        <p className='contact-details__info'>
-          <Icon icon='icon-park-solid:phone-telephone' color='#1b1b1b' width={25} /> tel: +48 795 003 227
-        </p>
+        <button onClick={handleMailCopy} className='contact-details__info info-item' aria-label='Copy email'>
+          <Icon icon='ic:baseline-mail' color='#1b1b1b' width={25} />
+          <p className=''>Tomasz.grobelski98@gmail.com</p>
+          {mailCopied ? (
+            <Icon icon='material-symbols:check-box' width={25} />
+          ) : (
+            <Icon icon='eva:copy-outline' color='#1b1b1b' width={25} />
+          )}
+        </button>
+        <button onClick={handleNumberCopy} className='contact-details__info info-item' aria-label='Copy number'>
+          <Icon icon='icon-park-solid:phone-telephone' color='#1b1b1b' width={25} />
+          <p className=''>tel: +48 795 003 227</p>
+          {numberCopied ? (
+            <Icon icon='material-symbols:check-box' width={25} />
+          ) : (
+            <Icon icon='eva:copy-outline' width={25} />
+          )}
+        </button>
+        <a href={cvTomaszGrobelski} download='Tomasz_Grobelski_CV' aria-label='Download Curriculum Vitae'>
+          <p className='contact-details__info info-item'>
+            <Icon icon='academicons:cv-square' color='#1b1b1b' width={25} />
+            <span>Curriculum Vitae</span>
+          </p>
+        </a>
       </motion.div>
-      <motion.div
-        className='contact-details__section'
-        // whileInView={{ opacity: 1, x: 0 }}
-        // initial={{ opacity: 0, x: 200 }}
-        // transition={{ duration: 2, delay: 0.75 }}
-        // viewport={{ once: true }}
-      >
+      <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Social media</h4>
-        <a href='https://github.com/TomaszGrobelski' aria-label='open Tomasz Grobelski profile page on github' target='_blank' rel='noopener noreferrer'>
-          <p className='contact-details__info'>
+        <a
+          href='https://github.com/TomaszGrobelski'
+          aria-label='open Tomasz Grobelski profile page on github'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <p className='contact-details__info info-item'>
             <Icon icon='ri:github-fill' color='#1b1b1b' width={25} />
-            Github
+            <span>Github</span>
           </p>
         </a>
-        <a href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/' aria-label='open Tomasz Grobelski profile page on Linkedin' target='_blank' rel='noopener noreferrer'>
-          <p className='contact-details__info'>
-            <Icon icon='bi:linkedin' color='#1b1b1b' width={25} /> LinkedIn
+        <a
+          href='https://www.linkedin.com/in/tomasz-grobelski-6182b4145/'
+          aria-label='open Tomasz Grobelski profile page on Linkedin'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <p className='contact-details__info info-item'>
+            <Icon icon='bi:linkedin' color='#1b1b1b' width={25} />
+            <span>LinkedIn</span> 
           </p>
         </a>
       </motion.div>
-      <motion.div
-        className='contact-details__section'
-        // whileInView={{ opacity: 1, x: 0 }}
-        // initial={{ opacity: 0, x: 200 }}
-        // transition={{ duration: 2, delay: 1 }}
-        // viewport={{ once: true }}
-      >
+      <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Location</h4>
         <p className='contact-details__info'>
           <Icon icon='ion:location-sharp' color='#1b1b1b' width={25} /> Kraków, Poland
-        </p>
-        <p className='contact-details__info'>
-          <Icon icon='carbon:time-filled' color='#1b1b1b' width={25} /> {polandTime}
         </p>
       </motion.div>
     </motion.div>
