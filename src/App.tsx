@@ -5,9 +5,9 @@ import Contact from './components/Contact/Contact';
 import BgWrapper from './components/Container/BgWrapper';
 import Container from './components/Container/Container';
 import ProjectsContainer from './components/Container/ProjectsContainer';
+import Field3D from './components/Field3D/Field3D';
 import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
-import Paralax from './components/Paralax/Paralax';
 import './styles/Global/app.scss';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             project2Ref={project2Ref}
             contactRef={contactRef}></Navbar>
           <Hero ref={heroRef} contactRef={contactRef} />
-          <Paralax />
+          <Field3D />
         </Container>
         <About ref={aboutRef} />
         <ProjectsContainer project1Ref={project1Ref} project2Ref={project2Ref} />

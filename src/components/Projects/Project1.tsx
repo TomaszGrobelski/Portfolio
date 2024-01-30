@@ -4,7 +4,7 @@ import { forwardRef, useRef } from 'react';
 
 import BookingFullPage from '../../assets/BookingFullPage.png';
 import '../../styles/Projects/project.scss';
-import GlassButton from '../Hero/GlassButton';
+import GlassButton from '../Buttons/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
 
 const Project1 = forwardRef<HTMLDivElement>((_, ref) => {

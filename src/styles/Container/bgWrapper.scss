@@ -1,9 +1,11 @@
 @import '../Global//app.scss';
 
 .wrapper-light {
+  position: relative;
   background: white;
 }
 
 .wrapper-dark {
+  position: relative;
   background-color: $primaryBackGroundColor;
 }

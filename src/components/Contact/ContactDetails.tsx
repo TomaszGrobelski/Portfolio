@@ -30,7 +30,7 @@ const ContactDetails = () => {
   const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
 
   return (
-    <motion.div className='contact-details' ref={scrollRef} style={{ translateX:x, opacity }}>
+    <motion.div className='contact-details' ref={scrollRef} style={{ translateX: x, opacity }}>
       <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Contact Details</h4>
         <button onClick={handleMailCopy} className='contact-details__info info-item' aria-label='Copy email'>
@@ -77,7 +77,7 @@ const ContactDetails = () => {
           rel='noopener noreferrer'>
           <p className='contact-details__info info-item'>
             <Icon icon='bi:linkedin' color='#1b1b1b' width={25} />
-            <span>LinkedIn</span> 
+            <span>LinkedIn</span>
           </p>
         </a>
       </motion.div>

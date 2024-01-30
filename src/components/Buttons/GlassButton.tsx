@@ -1,12 +1,7 @@
 import '../../styles/Hero/glassButton.scss';
+import { GlassButtonProps } from '../../types/Buttons/buttons.types';
 
-interface GlassButtonProps {
-  ariaLabel: string;
-  text: string;
-  icon: React.ReactElement;
-  disabled?: boolean;
-  onClick?: () => void;
-}
+
 const GlassButton = ({ ariaLabel, text, icon, disabled, onClick }: GlassButtonProps) => {
   const ariaProps = ariaLabel && ariaLabel !== text ? { 'aria-label': ariaLabel } : {};
 

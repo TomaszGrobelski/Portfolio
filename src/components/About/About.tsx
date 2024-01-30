@@ -42,9 +42,8 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             <p>
               For half of my life, I passionately played soccer, but a couple of knee surgeries have led me to adjust my
               physical activities. Despite the challenges, I've redirected my energy towards programing and gym
-              workouts. Pushing my limits in the gym have become integral parts of my
-              lifestyle. I believe in maintaining a balance between a fulfilling professional career and a healthy,
-              active life outside of work.
+              workouts. Pushing my limits in the gym have become integral parts of my lifestyle. I believe in
+              maintaining a balance between a fulfilling professional career and a healthy, active life outside of work.
             </p>
             <p> Feel free to explore my portfolio to see some of projects I've had made.</p>
           </motion.div>

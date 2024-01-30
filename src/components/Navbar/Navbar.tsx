@@ -4,22 +4,23 @@ import { useEffect, useState } from 'react';
 import { RefObject } from 'react';
 
 import '../../styles/Navbar/navbar.scss';
-import { NavbarProps } from '../../types/Navbar/navbar.types';
+import { NavbarProps, Section } from '../../types/Navbar/navbar.types';
+import { navbarVariants } from './animationVariants';
 
 const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState<string>('home');
   const [navbarVisible, setNavbarVisible] = useState<boolean>(false);
   const [distanceFromTop, setDistanceFromTop] = useState<number>(0);
 
-  const scrollToSection  = (sectionRef: RefObject<HTMLElement>) => {
+  const scrollToSection = (sectionRef: RefObject<HTMLElement>) => {
     if (sectionRef.current) {
       const element = sectionRef.current;
-      const targetPosition = element.getBoundingClientRect().top + window.scrollY; 
-      const startPosition = window.scrollY; 
+      const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
       const distance = targetPosition - startPosition;
       const duration = 750;
       let start: number | null = null;
-  
+
       const step = (timestamp: number) => {
         if (!start) start = timestamp;
         const progress = timestamp - start;
@@ -27,14 +28,14 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
         window.scrollTo(0, position);
         if (progress < duration) window.requestAnimationFrame(step);
       };
-  
+
       window.requestAnimationFrame(step);
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentHeight = window.scrollY ;
+      const currentHeight = window.scrollY;
       setDistanceFromTop(currentHeight);
 
       const heroOffset = heroRef.current!.getBoundingClientRect()!.top + window.scrollY;
@@ -68,29 +69,23 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
     };
   }, [distanceFromTop, heroRef, aboutRef, project1Ref, project2Ref, contactRef]);
 
-  const variants = {
-    open: {
-      clipPath: 'circle(1300px at 44px 44px)',
-      transition: {
-        type: 'spring',
-        stiffness: 20,
-      },
-    },
-    closed: {
-      clipPath: 'circle(18px at 44px 44px)',
-      transition: {
-        delay: 0.1,
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
-      },
-    },
+  const sections: Section[] = [
+    { name: 'home', ref: heroRef },
+    { name: 'about', ref: aboutRef },
+    { name: 'project1', ref: project1Ref },
+    { name: 'project2', ref: project2Ref },
+    { name: 'contact', ref: contactRef },
+  ];
+  const handleSectionClick = (section: Section) => {
+    setTimeout(() => {
+      setActiveItem(section.name);
+    }, 800);
+    scrollToSection(section.ref);
   };
-
   return (
     <>
       <motion.div className='sidebar' animate={navbarVisible ? 'open' : 'closed'}>
-        <motion.nav className='navbar' variants={variants}>
+        <motion.nav className='navbar' variants={navbarVariants}>
           <button
             aria-label={navbarVisible ? 'Close menu' : 'Open menu'}
             aria-expanded={navbarVisible}
@@ -103,60 +98,18 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
             )}
           </button>
           <ul className='nav-list'>
-            <li
-              className={activeItem === 'home' ? 'active' : ''}
-              onClick={() => {
-                setTimeout(() => {
-                  setActiveItem('home');
-                }, 800);
-                scrollToSection(heroRef);
-              }}>
-              HOME
-            </li>
-            <li
-              className={activeItem === 'about' ? 'active' : ''}
-              onClick={() => {
-                setTimeout(() => {
-                  setActiveItem('about');
-                }, 800);
-                scrollToSection(aboutRef);
-              }}>
-              ABOUT
-            </li>
-            <li
-              className={activeItem === 'project1' ? 'active' : ''}
-              onClick={() => {
-                setTimeout(() => {
-                  setActiveItem('project1');
-                }, 800);
-                scrollToSection(project1Ref);
-              }}>
-              PROJECT#1
-            </li>
-            <li
-              className={activeItem === 'project2' ? 'active' : ''}
-              onClick={() => {
-                setTimeout(() => {
-                  setActiveItem('project2');
-                }, 800);
-                scrollToSection(project2Ref);
-              }}>
-              PROJECT#2
-            </li>
-            <li
-              className={activeItem === 'contact' ? 'active' : ''}
-              onClick={() => {
-                setTimeout(() => {
-                  setActiveItem('contact');
-                }, 800);
-                scrollToSection(contactRef);
-              }}>
-              CONTACT
-            </li>
+            {sections.map((section) => (
+              <li
+                key={section.name}
+                className={activeItem === section.name ? 'active' : ''}
+                onClick={() => handleSectionClick(section)}>
+                {section.name.toUpperCase()}
+              </li>
+            ))}
           </ul>
         </motion.nav>
         <div
-          className={navbarVisible ? 'screen': 'none'}
+          className={navbarVisible ? 'screen' : 'none'}
           onClick={() => {
             setNavbarVisible(false);
           }}></div>

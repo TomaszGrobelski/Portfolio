@@ -7,3 +7,8 @@ export interface NavbarProps {
   project2Ref: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
 }
+
+export interface Section {
+  name: string;
+  ref: RefObject<HTMLElement>;
+}

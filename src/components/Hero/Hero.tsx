@@ -1,16 +1,13 @@
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
-import { RefObject, forwardRef, useRef, useState } from 'react';
+import { forwardRef, useRef, useState } from 'react';
 
 import AuthorImage from '../../assets/HeroImage.jpg';
 import welcomMusic from '../../assets/Welcom.mp3';
 import '../../styles/Hero/hero.scss';
-import GlassButton from './GlassButton';
+import { HeroProps } from '../../types/Hero/hero.types';
+import GlassButton from '../Buttons/GlassButton';
 import HeroHeader from './HeroHeader';
 
-interface HeroProps {
-  contactRef: RefObject<HTMLElement>;
-}
 const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -33,22 +30,12 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
       <div className='hero__wrapper'>
         <div className='left-box'>
           <HeroHeader className='left-box__header' />
-          <motion.p
-            className='left-box__description'
-            // initial={{ translateY: '100px', opacity: 0 }}
-            // animate={{ translateY: 0, opacity: 1 }}
-            // transition={{ duration: 1, delay: 1 }}
-            >
+          <p className='left-box__description'>
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
             experiences.
-          </motion.p>
-          <motion.div
-            className='left-box__button'
-            // initial={{ translateX: '-100px', opacity: 0 }}
-            // animate={{ translateX: 0, opacity: 1 }}
-            // transition={{ duration: 1, delay: 2}}
-            >
+          </p>
+          <div className='left-box__button'>
             <GlassButton
               ariaLabel='Scroll to contact section'
               onClick={handleScroll}
@@ -56,35 +43,18 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
               icon={<Icon icon='clarity:contract-line' color='white' />}
               disabled={false}
             />
-          </motion.div>
+          </div>
         </div>
         <div className='right-box'>
-          <motion.div
-            className='image-container'
-            // initial={{ translateY: '-100px', opacity: 0 }}
-            // animate={{ translateY: 0, opacity: 1 }}
-            // transition={{ duration: 1, delay: 2 }}
-            >
+          <div className='image-container'>
             <div className='spin-border'></div>
             <img loading='lazy' src={AuthorImage} alt='Author image' width={330} height={350} />
-          </motion.div>
+          </div>
         </div>
       </div>
       <div className='blured-circle'></div>
-      <motion.span
-        className='welcom'
-        // initial={{ translateY: '100px', opacity: 0 }}
-        // animate={{ translateY: 0, opacity: 1 }}
-        // transition={{ duration: 1, delay: 1 }}
-        >
-        WELCOME
-      </motion.span>
-      <motion.div
-        className='social-media'
-        // initial={{ translateX: '-200px', opacity: 0 }}
-        // animate={{ translateX: 0, opacity: 1 }}
-        // transition={{ duration: 1, delay: 1 }}
-        >
+      <span className='welcom'>WELCOME</span>
+      <div className='social-media'>
         <div className='social-media__box'>
           <button
             aria-label={audioAvilabe ? 'Play the sound' : 'Sound is not avilable'}
@@ -113,7 +83,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
           </a>
         </div>
         <span className='social-media__web-dev'>Web Developer</span>
-      </motion.div>
+      </div>
     </section>
   );
 });

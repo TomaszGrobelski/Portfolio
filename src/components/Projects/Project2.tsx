@@ -4,7 +4,7 @@ import { forwardRef, useRef } from 'react';
 
 import NikaFullPage from '../../assets/NikaFullPage.png';
 import '../../styles/Projects/project.scss';
-import GlassButton from '../Hero/GlassButton';
+import GlassButton from '../Buttons/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
 
 const Project2 = forwardRef<HTMLDivElement>((_, ref) => {
@@ -15,7 +15,7 @@ const Project2 = forwardRef<HTMLDivElement>((_, ref) => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ['0', '-100%']);
-  
+
   return (
     <motion.section ref={ref} style={{ translateX: x }} className='project project2'>
       <motion.h2

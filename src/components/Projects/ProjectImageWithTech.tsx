@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion';
 
 import '../../styles/Projects/projectImageWithTech.scss';
+import { ProjectImageWithTechProps } from '../../types/Projects/projects.types';
 
-interface ProjectImageWithTechProps {
-  image: string;
-  alt: string;
-  year: string;
-  tech: string;
-}
 const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechProps) => {
   return (
     <div className='project-image-with-tech'>
@@ -17,7 +12,14 @@ const ProjectImageWithTech = ({ image, alt, year, tech }: ProjectImageWithTechPr
         initial={{ opacity: 0, translateY: 200 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}>
-        <img loading='lazy' className='project-image-with-tech__container-image' src={image} alt={alt} width="1300" height="1300"  />
+        <img
+          loading='lazy'
+          className='project-image-with-tech__container-image'
+          src={image}
+          alt={alt}
+          width='1300'
+          height='1300'
+        />
       </motion.div>
       <div className='project-image-with-tech__info'>
         <motion.div

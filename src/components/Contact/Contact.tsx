@@ -21,20 +21,20 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
 
   return (
     <motion.section className='contact' ref={ref}>
-      <motion.h2 className='contact__header' style={{ translateY:y, opacity, rotate }}>
+      <motion.h2 className='contact__header' style={{ translateY: y, opacity, rotate }}>
         <Icon icon='tabler:arrow-big-down-lines-filled' color='#1b1b1b' width={32} />
         Contact
         <Icon icon='tabler:arrow-big-down-lines-filled' color='#1b1b1b' width={32} />
       </motion.h2>
       <motion.div className='contact__container'>
-        <motion.div className='contact__description' ref={scrollRef} style={{ translateX:x, opacity }}>
+        <motion.div className='contact__description' ref={scrollRef} style={{ translateX: x, opacity }}>
           <h3 className='contact__description-title'>Let's make something awesome together</h3>
           <ContactForm />
         </motion.div>
         <ContactDetails />
       </motion.div>
       <div className='contact__copyright'>
-       Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span> All rights reserved
+        Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span> All rights reserved
       </div>
     </motion.section>
   );

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import '../../styles/Paralax/introduction3D.scss';
 
-const Paralax = () => {
+const Field3D = () => {
   const [loading, setLoading] = useState(true);
 
   return (
@@ -14,4 +14,4 @@ const Paralax = () => {
   );
 };
 
-export default Paralax;
+export default Field3D;

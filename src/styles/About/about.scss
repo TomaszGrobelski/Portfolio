@@ -9,11 +9,9 @@
   max-width: 1300px;
   margin-inline: auto;
   &__header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     @include respond-to('small') {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-bottom: 1rem;
       font-size: 3rem;
     }
   }
