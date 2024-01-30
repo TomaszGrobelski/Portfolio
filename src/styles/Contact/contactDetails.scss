@@ -12,27 +12,29 @@
     a {
       color: $primaryBackGroundColor;
     }
-    .info-item :nth-child(2) {
-      position: relative;
-    }
-    .info-item :nth-child(2)::before,
-    .info-item :nth-child(2)::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -2px;
-      width: 0;
-      height: 1px;
-      background: black;
-      transition: all 500ms ease;
-      transform: translateX(-50%);
-    }
-    .info-item:hover :nth-child(2)::before {
-      width: 50%;
-    }
-    .info-item:hover :nth-child(2)::after {
-      transform: translateX(-50%) scaleX(2); /* Rozszerz o 100% od środka */
-      width: 50%;
+    @media (min-width: 500px) {
+      .info-item :nth-child(2) {
+        position: relative;
+      }
+      .info-item :nth-child(2)::before,
+      .info-item :nth-child(2)::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background: black;
+        transition: all 500ms ease;
+        transform: translateX(-50%);
+      }
+      .info-item:hover :nth-child(2)::before {
+        width: 50%;
+      }
+      .info-item:hover :nth-child(2)::after {
+        transform: translateX(-50%) scaleX(2); /* Rozszerz o 100% od środka */
+        width: 50%;
+      }
     }
   }
   &__header {

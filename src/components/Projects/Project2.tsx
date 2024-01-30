@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
 
 import NikaFullPage from '../../assets/NikaFullPage.png';
 import '../../styles/Projects/project.scss';
@@ -11,16 +11,17 @@ const Project2 = forwardRef<HTMLDivElement>((_, ref) => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start end', 'end end'],
+    offset: ['start end', 'center end'],
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ['0', '-100%']);
+  
   return (
-    <motion.section ref={ref} style={{ translateX: x }}  className='project project2'>
+    <motion.section ref={ref} style={{ translateX: x }} className='project project2'>
       <motion.h2
         whileInView={{ opacity: 1, translateY: 0 }}
         initial={{ opacity: 0, translateY: -100 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}>
         Nika
       </motion.h2>

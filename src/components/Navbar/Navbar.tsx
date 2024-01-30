@@ -11,15 +11,30 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
   const [navbarVisible, setNavbarVisible] = useState<boolean>(false);
   const [distanceFromTop, setDistanceFromTop] = useState<number>(0);
 
-  const scrollToSection = (sectionRef: RefObject<HTMLElement>) => {
-    if (sectionRef && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection  = (sectionRef: RefObject<HTMLElement>) => {
+    if (sectionRef.current) {
+      const element = sectionRef.current;
+      const targetPosition = element.getBoundingClientRect().top + window.scrollY; 
+      const startPosition = window.scrollY; 
+      const distance = targetPosition - startPosition;
+      const duration = 750;
+      let start: number | null = null;
+  
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const position = startPosition + distance * (progress / duration);
+        window.scrollTo(0, position);
+        if (progress < duration) window.requestAnimationFrame(step);
+      };
+  
+      window.requestAnimationFrame(step);
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentHeight = window.scrollY + 1;
+      const currentHeight = window.scrollY ;
       setDistanceFromTop(currentHeight);
 
       const heroOffset = heroRef.current!.getBoundingClientRect()!.top + window.scrollY;
@@ -108,7 +123,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
               }}>
               ABOUT
             </li>
-            {/* <li
+            <li
               className={activeItem === 'project1' ? 'active' : ''}
               onClick={() => {
                 setTimeout(() => {
@@ -127,7 +142,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
                 scrollToSection(project2Ref);
               }}>
               PROJECT#2
-            </li> */}
+            </li>
             <li
               className={activeItem === 'contact' ? 'active' : ''}
               onClick={() => {

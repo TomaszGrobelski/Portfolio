@@ -17,7 +17,7 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-500px', '60px']);
   const x = useTransform(scrollYProgress, [0, 1], ['-300px', '0px']);
   const opacity = useTransform(scrollYProgress, [0, 1], ['0', '1']);
-  const rotate = useTransform(scrollYProgress, [0, 1], ['0', '720deg']);
+  const rotate = useTransform(scrollYProgress, [0, 1], ['0', '360deg']);
 
   return (
     <motion.section className='contact' ref={ref}>
@@ -34,7 +34,7 @@ const Contact = forwardRef<HTMLHeadingElement>((_, ref) => {
         <ContactDetails />
       </motion.div>
       <div className='contact__copyright'>
-        Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span> All rights reserved
+       Ⓒ 2024<span className='contact__copyright-fullname'> Tomasz Grobelski</span> All rights reserved
       </div>
     </motion.section>
   );
