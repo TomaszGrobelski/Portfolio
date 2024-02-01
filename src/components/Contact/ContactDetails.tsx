@@ -83,9 +83,9 @@ const ContactDetails = () => {
       </motion.div>
       <motion.div className='contact-details__section'>
         <h4 className='contact-details__header'>Location</h4>
-        <p className='contact-details__info'>
+        <address className='contact-details__info'>
           <Icon icon='ion:location-sharp' color='#1b1b1b' width={25} /> Kraków, Poland
-        </p>
+        </address>
       </motion.div>
     </motion.div>
   );
