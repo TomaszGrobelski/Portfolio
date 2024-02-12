@@ -30,7 +30,7 @@ const Project2 = forwardRef<HTMLDivElement>((_, ref) => {
           image={NikaFullPage}
           alt='Full hero page Nika'
           year='2023'
-          tech='React · TypeScrit · TailwindCSS '
+          tech='React · TypeScript · TailwindCSS '
         />
         <div className='buttons-box'>
           <motion.a
