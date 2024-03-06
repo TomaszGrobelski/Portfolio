@@ -13,7 +13,7 @@ const Expirience = () => {
         <p className='description'>
           As a developer within a team dedicated to a social media application, my primary focus involved overseeing the
           administrative panel. I designed a user-friendly table for displaying information, incorporating filters,
-          sorting, events handling such as changes in user status, and pagination to streamline data navigation. I
+          sorting, events handling such as changes in user status,pagination to streamline data navigation and created modals. I
           collaborated closely with the team, gaining valuable experience and refining my Git version control skills.
           Notably, during this collaborative effort, I received constructive reviews and contributed to the project
           through pull requests, further enhancing my abilities in a dynamic team environment.
