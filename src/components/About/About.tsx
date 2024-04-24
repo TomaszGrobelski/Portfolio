@@ -64,6 +64,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
                 <Icon icon='skill-icons:javascript' width='50' />
                 <Icon icon='logos:typescript-icon' width='50' />
                 <Icon icon='logos:react' width='50' />
+                <Icon icon='skill-icons:nextjs-light' width='50' />
               </div>
             </div>
             <div>
@@ -72,6 +73,7 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
                 <Icon icon='skill-icons:nodejs-dark' width='50' />
                 <Icon icon='skill-icons:expressjs-dark' width='50' />
                 <Icon icon='skill-icons:mongodb' width='50' />
+                <Icon icon='logos:postgresql' width='50' />
               </div>
             </div>
             <div>
