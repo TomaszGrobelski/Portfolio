@@ -6,9 +6,15 @@ const Expirience = () => {
     <section className='expirience'>
       <h2 className='expirience__header'>Expirience</h2>
       <div className='expirience__details'>
-        <p className='aplication-name'>Social media application</p>
+        <p className='aplication-name'>Social media application </p>
+        <a href='https://www.fiszi.pl/' aria-label='open side fiszi.pl' target='_blank' rel='noopener noreferrer'>
+          Fiszi.pl
+        </a>
         <p className='role'>Role: Frontend Developer</p>
         <p className='duration'>Duration: 01.11.2023 - Present</p>
+
+        <p className='duration'></p>
+
         <img src={adminPanel} alt='admin-panel' />
         <div className='description '>
           <p>
