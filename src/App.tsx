@@ -5,9 +5,9 @@ import Contact from './components/Contact/Contact';
 import BgWrapper from './components/Container/BgWrapper';
 import Container from './components/Container/Container';
 import ProjectsContainer from './components/Container/ProjectsContainer';
+import Expirience from './components/Expirience/Expirience';
 import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
-import Expirience from './components/Expirience/Expirience';
 import './styles/Global/app.scss';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   const aboutRef = useRef(null);
   const project1Ref = useRef<HTMLDivElement>(null);
   const project2Ref = useRef<HTMLDivElement>(null);
+  const project3Ref = useRef<HTMLDivElement>(null);
   const contactRef = useRef(null);
 
   return (
@@ -26,12 +27,13 @@ function App() {
             aboutRef={aboutRef}
             project1Ref={project1Ref}
             project2Ref={project2Ref}
+            project3Ref={project3Ref}
             contactRef={contactRef}></Navbar>
           <Hero ref={heroRef} contactRef={contactRef} />
         </Container>
         <About ref={aboutRef} />
         <Expirience />
-        <ProjectsContainer project1Ref={project1Ref} project2Ref={project2Ref} />
+        <ProjectsContainer project1Ref={project1Ref} project2Ref={project2Ref} project3Ref={project3Ref} />
       </BgWrapper>
       <Container>
         <Contact ref={contactRef} />

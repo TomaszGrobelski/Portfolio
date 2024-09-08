@@ -5,6 +5,7 @@ export interface NavbarProps {
   aboutRef: RefObject<HTMLElement>;
   project1Ref: RefObject<HTMLElement>;
   project2Ref: RefObject<HTMLElement>;
+  project3Ref: RefObject<HTMLElement>;
   contactRef: RefObject<HTMLElement>;
 }
 

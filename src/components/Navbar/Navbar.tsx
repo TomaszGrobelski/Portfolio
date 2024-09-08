@@ -7,7 +7,7 @@ import '../../styles/Navbar/navbar.scss';
 import { NavbarProps, Section } from '../../types/Navbar/navbar.types';
 import { navbarVariants } from './animationVariants';
 
-const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: NavbarProps) => {
+const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, project3Ref, contactRef }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState<string>('home');
   const [navbarVisible, setNavbarVisible] = useState<boolean>(false);
   const [distanceFromTop, setDistanceFromTop] = useState<number>(0);
@@ -42,6 +42,7 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
       const aboutOffset = aboutRef.current!.getBoundingClientRect()!.top + window.scrollY;
       const project1Offset = project1Ref.current!.getBoundingClientRect()!.top + window.scrollY;
       const project2Offset = project2Ref.current!.getBoundingClientRect()!.top + window.scrollY;
+      const project3Offset = project3Ref.current!.getBoundingClientRect()!.top + window.scrollY;
       const contactOffset = contactRef.current!.getBoundingClientRect()!.top + window.scrollY;
 
       if (distanceFromTop >= heroOffset) {
@@ -57,6 +58,9 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
       if (distanceFromTop >= project2Offset) {
         setActiveItem('project2');
       }
+      if (distanceFromTop >= project3Offset) {
+        setActiveItem('project3');
+      }
       if (distanceFromTop >= contactOffset) {
         setActiveItem('contact');
       }
@@ -67,13 +71,14 @@ const Navbar = ({ heroRef, aboutRef, project1Ref, project2Ref, contactRef }: Nav
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [distanceFromTop, heroRef, aboutRef, project1Ref, project2Ref, contactRef]);
+  }, [distanceFromTop, heroRef, aboutRef, project1Ref, project2Ref, project3Ref, contactRef]);
 
   const sections: Section[] = [
     { name: 'home', ref: heroRef },
     { name: 'about', ref: aboutRef },
     { name: 'project1', ref: project1Ref },
     { name: 'project2', ref: project2Ref },
+    { name: 'project3', ref: project3Ref },
     { name: 'contact', ref: contactRef },
   ];
   const handleSectionClick = (section: Section) => {

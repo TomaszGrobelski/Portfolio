@@ -12,4 +12,5 @@ export interface ContainerProps {
 export interface ProjectsContainerProps {
   project1Ref: RefObject<HTMLDivElement>;
   project2Ref: RefObject<HTMLDivElement>;
+  project3Ref: RefObject<HTMLDivElement>;
 }
