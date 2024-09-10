@@ -1,0 +1,82 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  padding-top: 1rem;
+  width: 95%;
+  max-width: 500px;
+  font-size: 1.1rem;
+}
+.form .input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: inherit;
+}
+.form .input-box .input-field {
+  outline: none;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #1b1b1b;
+  font-size: inherit;
+}
+.form .input-box .input-field::-moz-placeholder {
+  color: #1b1b1b;
+  font-size: inherit;
+}
+.form .input-box .input-field::placeholder {
+  color: #1b1b1b;
+  font-size: inherit;
+}
+.form .input-box .input-field:focus {
+  outline: none;
+}
+.form .input-box .invalid {
+  border-bottom: 1px solid red;
+}
+.form .textarea-field {
+  padding: 0.5rem;
+  width: inherit;
+  font-size: inherit;
+  outline: none;
+  border-inline: none;
+  border-top: none;
+  border-bottom: 1px solid #1b1b1b;
+  height: 10rem;
+}
+.form .textarea-field::-moz-placeholder {
+  color: #1b1b1b;
+  font-size: inherit;
+}
+.form .textarea-field::placeholder {
+  color: #1b1b1b;
+  font-size: inherit;
+}
+.form .textarea-field:focus {
+  outline: none;
+  font-size: inherit;
+}
+.form .textarea-field.invalid {
+  border-bottom: 1px solid red;
+}
+.form .submit-button {
+  border: 1px solid white;
+  width: 11rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 1rem;
+  letter-spacing: 1px;
+  transition: all;
+  transition-duration: 500ms;
+  font-size: 1.1rem;
+  background-color: white;
+  color: #1b1b1b;
+  text-shadow: 0 0 5px white;
+  border: 1px solid #1b1b1b;
+}
+.form .submit-button:hover {
+  background-color: #1b1b1b;
+  color: white;
+}/*# sourceMappingURL=contactForm.css.map */

@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+section {
+  min-height: 100svh;
+  min-height: 100vh;
+  background: #1b1b1b;
+  color: white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h4 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar {
+  position: relative;
+}
+.sidebar .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100svh;
+  max-width: 270px;
+  color: black;
+  background-color: white;
+  z-index: 10;
+}
+@media (max-width: 500px) {
+  .sidebar .navbar {
+    max-width: 200px;
+  }
+}
+.sidebar .navbar .close-button {
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px #1b1b1b solid;
+  color: black;
+}
+.sidebar .navbar .nav-list {
+  color: black;
+  list-style: none;
+  display: grid;
+  gap: 2rem;
+  padding-block: 2rem;
+  font-size: 1.5rem;
+}
+@media (max-width: 500px) {
+  .sidebar .navbar .nav-list {
+    font-size: 1rem;
+    gap: 1.5rem;
+  }
+}
+.sidebar .navbar .nav-list li {
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  border-radius: 100vw 0 0 100vw;
+  cursor: pointer;
+  color: black;
+}
+.sidebar .navbar .nav-list li.active {
+  background: #1b1b1b;
+  position: relative;
+  color: white;
+}
+.sidebar .navbar .nav-list li.active::before, .sidebar .navbar .nav-list li.active::after {
+  --border-radius: 2rem;
+  content: "";
+  position: absolute;
+  width: var(--border-radius);
+  height: var(--border-radius);
+  background: white;
+  right: 0;
+}
+.sidebar .navbar .nav-list li.active::before {
+  top: calc(var(--border-radius) * -1);
+  border-radius: 0 0 100vw 0;
+  box-shadow: 6px 6px 0 6px #1b1b1b;
+}
+.sidebar .navbar .nav-list li.active::after {
+  bottom: calc(var(--border-radius) * -1);
+  border-radius: 0 100vw 0 0;
+  box-shadow: 6px -6px 0 6px #1b1b1b;
+}
+.sidebar .screen {
+  position: fixed;
+  top: 0;
+  left: 218px;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+@media (max-width: 500px) {
+  .sidebar .screen {
+    left: 172px;
+  }
+}
+.sidebar .none {
+  display: none;
+}/*# sourceMappingURL=navbar.css.map */

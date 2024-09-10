@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+section {
+  min-height: 100svh;
+  min-height: 100vh;
+  background: #1b1b1b;
+  color: white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+}
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+h4 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.glass-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 160px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.2rem;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+  transition: 0.5s;
+  border-radius: 5px;
+  box-shadow: 0 0 10px white;
+}
+@media (max-width: 500px) {
+  .glass-button {
+    width: 120px;
+    height: 50px;
+  }
+}
+.glass-button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.03) 58%, rgba(255, 255, 255, 0.16) 67%, transparent 68%);
+  background-size: 200% 100%;
+  background-position: 165% 0;
+  transition: 0.7s;
+}
+.glass-button:hover::after {
+  background-position: -20% 0;
+}
+.glass-button:hover {
+  box-shadow: 15px 30px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+  text-shadow: 0px 0px 6px white;
+}
+
+.off-glass-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 160px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.2rem;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+  transition: 0.5s;
+  border-radius: 5px;
+  opacity: 50%;
+  cursor: auto;
+}
+@media (max-width: 500px) {
+  .off-glass-button {
+    width: 120px;
+    height: 50px;
+  }
+}/*# sourceMappingURL=glassButton.css.map */

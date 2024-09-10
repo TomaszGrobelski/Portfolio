@@ -68,6 +68,7 @@
           width: 19rem;
         }
       }
+     
       &__button {
         margin-top: 2rem;
       }
@@ -123,11 +124,11 @@
     width: 8rem;
     height: 8rem;
     border-radius: 100%;
-    background-color: rgb(61, 51, 94);
+    background-color: rgb(173, 161, 211);
     z-index: 10;
-    bottom: 7rem;
-    left: 10rem;
-    filter: blur(80px);
+    bottom: -3rem;
+    left: 14rem;
+    filter: blur(150px);
     @include respond-to('large') {
       top: 30rem;
       left: 13rem;
@@ -149,7 +150,7 @@
       top: 36rem;
     }
     @include respond-to('medium') {
-      font-size: 5.0rem;
+      font-size: 5rem;
       top: 40rem;
     }
     @include respond-to('small') {

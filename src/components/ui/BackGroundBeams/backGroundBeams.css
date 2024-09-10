@@ -1,0 +1,44 @@
+.backGround {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  mask-size: 40px;
+  mask-repeat: no-repeat;
+  z-index: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backGroundWithCollision {
+  height: 24rem; 
+  background: linear-gradient(to bottom, white, #f5f5f5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .element {
+    height: 40rem; /* md:h-[40rem] */
+  }
+}
+
+.dark .element {
+  background: linear-gradient(to bottom, #1a1a1a, #2f2f2f);
+}
+
+.beam {
+  position: absolute;
+  bottom: 0;
+  background-color: #f5f5f5; /* bg-neutral-100 in Tailwind */
+  width: 100%;
+  left: 0;
+  right: 0; /* inset-x-0 in Tailwind */
+  pointer-events: none;
+}

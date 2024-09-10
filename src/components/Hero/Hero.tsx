@@ -6,6 +6,8 @@ import welcomMusic from '../../assets/Welcom.mp3';
 import '../../styles/Hero/hero.scss';
 import { HeroProps } from '../../types/Hero/hero.types';
 import GlassButton from '../Buttons/GlassButton';
+import { BackgroundBeams } from '../ui/BackGroundBeams/BackGroundBeams';
+import { FlipWords } from '../ui/FlipWords/FlipWord';
 import HeroHeader from './HeroHeader';
 
 const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
@@ -27,14 +29,17 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
   };
   return (
     <section ref={ref} className='hero'>
+      <BackgroundBeams />
       <div className='hero__wrapper'>
         <div className='left-box'>
           <HeroHeader className='left-box__header' />
+
           <p className='left-box__description'>
             Hi, I'm a frontend developer passionate about creating beautiful and interactive web applications. My
             expertise lies in crafting responsive and user-friendly interfaces that deliver exceptional online
             experiences.
           </p>
+
           <div className='left-box__button'>
             <GlassButton
               ariaLabel='Scroll to contact section'
@@ -53,7 +58,9 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
         </div>
       </div>
       <div className='blured-circle'></div>
-      <span className='welcom'>WELCOME</span>
+      <span className='welcom'>
+        <FlipWords words={['WELCOME', 'EXPLORE', 'ENJOY']}></FlipWords>
+      </span>
       <div className='social-media'>
         <div className='social-media__box'>
           <button
