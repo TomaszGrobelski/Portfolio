@@ -11,7 +11,7 @@ const Expirience = () => {
           Fiszi.pl
         </a>
         <p className='role'>Role: Frontend Developer</p>
-        <p className='duration'>Duration: 01.11.2023 - Present</p>
+        <p className='duration'>Duration: 01.11.2023 - 01.08.2024</p>
 
         <p className='duration'></p>
 

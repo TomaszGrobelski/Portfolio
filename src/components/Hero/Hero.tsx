@@ -1,7 +1,6 @@
 import { Icon } from '@iconify/react';
 import { forwardRef, useRef, useState } from 'react';
 
-import AuthorImage from '../../assets/HeroImage.jpg';
 import welcomMusic from '../../assets/Welcom.mp3';
 import '../../styles/Hero/hero.scss';
 import { HeroProps } from '../../types/Hero/hero.types';
@@ -50,14 +49,16 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(({ contactRef }, ref) => {
             />
           </div>
         </div>
-        <div className='right-box'>
+
+        {/* <div className='right-box'>
           <div className='image-container'>
             <div className='spin-border'></div>
             <img loading='lazy' src={AuthorImage} alt='Author image' width={330} height={350} />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className='blured-circle'></div>
+
       <span className='welcom'>
         <FlipWords words={['WELCOME', 'EXPLORE', 'ENJOY']}></FlipWords>
       </span>

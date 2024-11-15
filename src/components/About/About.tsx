@@ -35,15 +35,15 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
             <h3>Hi there</h3>
             <p>My name is Tomasz and I'm frontend developer</p>
             <p>
-              Having immersed myself in the world of web development for a year now, I continuously strive to expand my
-              skill set and stay up-to-date with the latest technologies and trends. I enjoy tackling challenges and
-              creating seamless user interfaces that leave a lasting impression.
+              With two years of experience in web development, I am dedicated to refining my technical skills and
+              staying current with the latest industry trends and technologies. My expertise lies in creating scalable,
+              responsive, and user-centric web applications that deliver smooth, engaging experiences.{' '}
             </p>
             <p>
-              For half of my life, I passionately played soccer, but a couple of knee surgeries have led me to adjust my
-              physical activities. Despite the challenges, I've redirected my energy towards programing and gym
-              workouts. Pushing my limits in the gym have become integral parts of my lifestyle. I believe in
-              maintaining a balance between a fulfilling professional career and a healthy, active life outside of work.
+              I am passionate about problem-solving and always eager to embrace new challenges. I enjoy crafting
+              innovative solutions that not only fulfill user needs but also push the boundaries of what's possible in
+              the digital space. Outside of development, I strive to maintain a healthy balance between work and
+              personal life, consistently working towards growth, both professionally and personally.{' '}
             </p>
             <p> Feel free to explore my portfolio to see some of projects I've had made.</p>
           </motion.div>
@@ -61,10 +61,12 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
                 <Icon icon='devicon:css3' width='50' />
                 <Icon icon='skill-icons:sass' width='50' />
                 <Icon icon='skill-icons:tailwindcss-dark' width='50' />
+                <Icon icon='skill-icons:jest' width='50' />
                 <Icon icon='skill-icons:javascript' width='50' />
                 <Icon icon='logos:typescript-icon' width='50' />
                 <Icon icon='logos:react' width='50' />
                 <Icon icon='skill-icons:nextjs-light' width='50' />
+                <Icon icon='skill-icons:wordpress' width='50' />
               </div>
             </div>
             <div>
@@ -74,6 +76,9 @@ const About = forwardRef<HTMLSelectElement>((_, ref) => {
                 <Icon icon='skill-icons:expressjs-dark' width='50' />
                 <Icon icon='skill-icons:mongodb' width='50' />
                 <Icon icon='logos:postgresql' width='50' />
+                <Icon icon='skill-icons:nextjs-light' width='50' />
+                <Icon icon='skill-icons:supabase-light' width='50' />
+                <Icon icon='skill-icons:prisma' width='50' />
               </div>
             </div>
             <div>

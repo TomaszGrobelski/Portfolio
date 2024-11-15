@@ -30,7 +30,7 @@ const Project1 = forwardRef<HTMLDivElement>((_, ref) => {
           image={BGRFullPage}
           alt='GoBikeRide'
           year='2024'
-          tech='Next.js · TypeScript · TailwindCSS · Supabase '
+          tech='Next.js · TypeScript · TailwindCSS · Supabase · Prisma '
         />
         <div className='buttons-box'>
           <motion.a
