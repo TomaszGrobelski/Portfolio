@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { forwardRef, useRef } from 'react';
 
-import BookingFullPage from '../../assets/BookingFullPage.png';
+import BGRFullPage from '../../assets/GBRFullScrean.png';
 import '../../styles/Projects/project.scss';
 import GlassButton from '../Buttons/GlassButton';
 import ProjectImageWithTech from './ProjectImageWithTech';
@@ -23,19 +23,19 @@ const Project1 = forwardRef<HTMLDivElement>((_, ref) => {
         initial={{ opacity: 0, translateY: -100 }}
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}>
-        Booking
+        GoBikeRide
       </motion.h2>
       <div ref={targetRef} className='project-container'>
         <ProjectImageWithTech
-          image={BookingFullPage}
-          alt='Booking'
+          image={BGRFullPage}
+          alt='GoBikeRide'
           year='2024'
-          tech='React · TypeScript · TailwindCSS · Node · Express · MongoDB'
+          tech='Next.js · TypeScript · TailwindCSS · Supabase '
         />
         <div className='buttons-box'>
           <motion.a
-            aria-label='Open the Booking project on GitHub'
-            href='https://github.com/TomaszGrobelski/Booking'
+            aria-label='Open the GoBikeRide project on GitHub'
+            href='https://github.com/TomaszGrobelski/GoBikeRide'
             target='_blank'
             rel='noopener noreferrer'
             whileInView={{ opacity: 1, translateY: 0 }}
@@ -43,25 +43,26 @@ const Project1 = forwardRef<HTMLDivElement>((_, ref) => {
             transition={{ duration: 1, delay: 0.4 }}
             viewport={{ once: true }}>
             <GlassButton
-              ariaLabel='Open the Booking project on GitHub'
+              ariaLabel='Open the GoBikeRide project on GitHub'
               text='Github'
               icon={<Icon icon='mingcute:github-fill' color='white' width={25} />}
             />
           </motion.a>
-          <motion.div
-            aria-disabled={true}
-            aria-label='Demo link not available'
+          <motion.a
+            aria-label='Link to GoBikeRide demo project'
+            href='https://go-bike-ride.vercel.app/auth/sign-in'
+            target='_blank'
+            rel='noopener noreferrer'
             whileInView={{ opacity: 1, translateY: 0 }}
             initial={{ opacity: 0, translateY: 100 }}
             transition={{ duration: 1, delay: 0.6 }}
             viewport={{ once: true }}>
             <GlassButton
-              ariaLabel='Button is not avilable'
+              ariaLabel='Open GoBikeRide demo project'
               text='Demo'
               icon={<Icon icon='fa:play-circle-o' width={25} />}
-              disabled={true}
             />
-          </motion.div>
+          </motion.a>
         </div>
       </div>
     </motion.section>
